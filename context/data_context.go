@@ -10,7 +10,7 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/bilibili/gengine/internal/core"
+	"github.com/shikbupt/gengine/internal/core"
 )
 
 type DataContext struct {

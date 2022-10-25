@@ -6,8 +6,8 @@ import (
 	"sort"
 	"sync"
 
-	"github.com/bilibili/gengine/builder"
-	"github.com/bilibili/gengine/internal/base"
+	"github.com/shikbupt/gengine/builder"
+	"github.com/shikbupt/gengine/internal/base"
 
 	"github.com/google/martian/log"
 )

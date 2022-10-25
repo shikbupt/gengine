@@ -7,8 +7,8 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/bilibili/gengine/internal/base"
-	parser "github.com/bilibili/gengine/internal/iantlr/alr"
+	"github.com/shikbupt/gengine/internal/base"
+	parser "github.com/shikbupt/gengine/internal/iantlr/alr"
 
 	"github.com/antlr/antlr4/runtime/Go/antlr/v4"
 	"github.com/golang-collections/collections/stack"

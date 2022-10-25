@@ -8,11 +8,11 @@ import (
 	"sync"
 
 	"github.com/antlr/antlr4/runtime/Go/antlr/v4"
-	"github.com/bilibili/gengine/context"
-	"github.com/bilibili/gengine/internal/base"
-	parser "github.com/bilibili/gengine/internal/iantlr/alr"
-	"github.com/bilibili/gengine/internal/iparser"
-	"github.com/bilibili/gengine/internal/tool"
+	"github.com/shikbupt/gengine/context"
+	"github.com/shikbupt/gengine/internal/base"
+	parser "github.com/shikbupt/gengine/internal/iantlr/alr"
+	"github.com/shikbupt/gengine/internal/iparser"
+	"github.com/shikbupt/gengine/internal/tool"
 )
 
 type RuleBuilder struct {

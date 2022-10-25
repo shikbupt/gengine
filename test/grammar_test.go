@@ -5,11 +5,11 @@ import (
 	"testing"
 
 	"github.com/antlr/antlr4/runtime/Go/antlr/v4"
-	"github.com/bilibili/gengine/builder"
-	"github.com/bilibili/gengine/context"
-	"github.com/bilibili/gengine/internal/base"
-	parser "github.com/bilibili/gengine/internal/iantlr/alr"
-	"github.com/bilibili/gengine/internal/iparser"
+	"github.com/shikbupt/gengine/builder"
+	"github.com/shikbupt/gengine/context"
+	"github.com/shikbupt/gengine/internal/base"
+	parser "github.com/shikbupt/gengine/internal/iantlr/alr"
+	"github.com/shikbupt/gengine/internal/iparser"
 )
 
 const (

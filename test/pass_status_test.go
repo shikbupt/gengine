@@ -1,9 +1,9 @@
 package test
 
 import (
-	"github.com/bilibili/gengine/builder"
-	"github.com/bilibili/gengine/context"
-	"github.com/bilibili/gengine/engine"
+	"github.com/shikbupt/gengine/builder"
+	"github.com/shikbupt/gengine/context"
+	"github.com/shikbupt/gengine/engine"
 	"testing"
 )
 
