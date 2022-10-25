@@ -1,8 +1,8 @@
-// Code generated from /Users/renyunyi/go_project/github.com/bilibili/gengine/internal/iantlr/gengine.g4 by ANTLR 4.9. DO NOT EDIT.
+// Code generated from java-escape by ANTLR 4.11.1. DO NOT EDIT.
 
 package parser // gengine
+import "github.com/antlr/antlr4/runtime/Go/antlr/v4"
 
-import "github.com/antlr/antlr4/runtime/Go/antlr"
 // A complete Visitor for a parse tree produced by gengineParser.
 type gengineVisitor interface {
 	antlr.ParseTreeVisitor
@@ -58,6 +58,18 @@ type gengineVisitor interface {
 	// Visit a parse tree produced by gengineParser#elseStmt.
 	VisitElseStmt(ctx *ElseStmtContext) interface{}
 
+	// Visit a parse tree produced by gengineParser#forStmt.
+	VisitForStmt(ctx *ForStmtContext) interface{}
+
+	// Visit a parse tree produced by gengineParser#breakStmt.
+	VisitBreakStmt(ctx *BreakStmtContext) interface{}
+
+	// Visit a parse tree produced by gengineParser#forRangeStmt.
+	VisitForRangeStmt(ctx *ForRangeStmtContext) interface{}
+
+	// Visit a parse tree produced by gengineParser#continueStmt.
+	VisitContinueStmt(ctx *ContinueStmtContext) interface{}
+
 	// Visit a parse tree produced by gengineParser#constant.
 	VisitConstant(ctx *ConstantContext) interface{}
 
@@ -103,6 +115,9 @@ type gengineVisitor interface {
 	// Visit a parse tree produced by gengineParser#assignOperator.
 	VisitAssignOperator(ctx *AssignOperatorContext) interface{}
 
+	// Visit a parse tree produced by gengineParser#rangeOperator.
+	VisitRangeOperator(ctx *RangeOperatorContext) interface{}
+
 	// Visit a parse tree produced by gengineParser#notOperator.
 	VisitNotOperator(ctx *NotOperatorContext) interface{}
 
@@ -120,5 +135,4 @@ type gengineVisitor interface {
 
 	// Visit a parse tree produced by gengineParser#atSal.
 	VisitAtSal(ctx *AtSalContext) interface{}
-
 }

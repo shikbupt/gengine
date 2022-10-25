@@ -1,8 +1,9 @@
 package iparser
 
 import (
-	"github.com/antlr/antlr4/runtime/Go/antlr"
 	"strconv"
+
+	"github.com/antlr/antlr4/runtime/Go/antlr/v4"
 )
 
 type GengineErrorListener struct {
@@ -16,7 +17,8 @@ func NewGengineErrorListener() *GengineErrorListener {
 	}
 }
 
-/**
+/*
+*
 syntax err check
 */
 func (el *GengineErrorListener) SyntaxError(recognizer antlr.Recognizer, offendingSymbol interface{}, line, column int, msg string, e antlr.RecognitionException) {

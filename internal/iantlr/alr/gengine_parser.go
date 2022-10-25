@@ -1,240 +1,259 @@
-// Code generated from ../gengine.g4 by ANTLR 4.9. DO NOT EDIT.
+// Code generated from java-escape by ANTLR 4.11.1. DO NOT EDIT.
 
 package parser // gengine
-
 import (
 	"fmt"
-	"reflect"
 	"strconv"
+	"sync"
 
-	"github.com/antlr/antlr4/runtime/Go/antlr"
+	"github.com/antlr/antlr4/runtime/Go/antlr/v4"
 )
 
 // Suppress unused import errors
 var _ = fmt.Printf
-var _ = reflect.Copy
 var _ = strconv.Itoa
-
-var parserATN = []uint16{
-	3, 24715, 42794, 33075, 47597, 16764, 15335, 30598, 22884, 3, 58, 369,
-	4, 2, 9, 2, 4, 3, 9, 3, 4, 4, 9, 4, 4, 5, 9, 5, 4, 6, 9, 6, 4, 7, 9, 7,
-	4, 8, 9, 8, 4, 9, 9, 9, 4, 10, 9, 10, 4, 11, 9, 11, 4, 12, 9, 12, 4, 13,
-	9, 13, 4, 14, 9, 14, 4, 15, 9, 15, 4, 16, 9, 16, 4, 17, 9, 17, 4, 18, 9,
-	18, 4, 19, 9, 19, 4, 20, 9, 20, 4, 21, 9, 21, 4, 22, 9, 22, 4, 23, 9, 23,
-	4, 24, 9, 24, 4, 25, 9, 25, 4, 26, 9, 26, 4, 27, 9, 27, 4, 28, 9, 28, 4,
-	29, 9, 29, 4, 30, 9, 30, 4, 31, 9, 31, 4, 32, 9, 32, 4, 33, 9, 33, 4, 34,
-	9, 34, 4, 35, 9, 35, 4, 36, 9, 36, 4, 37, 9, 37, 4, 38, 9, 38, 4, 39, 9,
-	39, 4, 40, 9, 40, 4, 41, 9, 41, 4, 42, 9, 42, 4, 43, 9, 43, 4, 44, 9, 44,
-	3, 2, 6, 2, 90, 10, 2, 13, 2, 14, 2, 91, 3, 3, 3, 3, 3, 3, 5, 3, 97, 10,
-	3, 3, 3, 5, 3, 100, 10, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 3, 4, 3, 5, 3,
-	5, 3, 6, 3, 6, 3, 6, 3, 7, 3, 7, 3, 8, 7, 8, 116, 10, 8, 12, 8, 14, 8,
-	119, 11, 8, 3, 8, 5, 8, 122, 10, 8, 3, 9, 3, 9, 3, 9, 3, 9, 3, 9, 3, 9,
-	3, 9, 3, 9, 3, 9, 3, 9, 5, 9, 134, 10, 9, 3, 10, 3, 10, 3, 10, 3, 10, 3,
-	10, 3, 10, 7, 10, 142, 10, 10, 12, 10, 14, 10, 145, 11, 10, 3, 10, 3, 10,
-	3, 11, 3, 11, 3, 11, 5, 11, 152, 10, 11, 3, 11, 3, 11, 5, 11, 156, 10,
-	11, 3, 11, 3, 11, 3, 11, 3, 11, 5, 11, 162, 10, 11, 3, 11, 3, 11, 3, 11,
-	3, 11, 3, 11, 3, 11, 3, 11, 3, 11, 7, 11, 172, 10, 11, 12, 11, 14, 11,
-	175, 11, 11, 3, 12, 3, 12, 3, 12, 3, 12, 3, 12, 3, 12, 5, 12, 183, 10,
-	12, 3, 12, 3, 12, 3, 12, 3, 12, 3, 12, 3, 12, 3, 12, 3, 12, 7, 12, 193,
-	10, 12, 12, 12, 14, 12, 196, 11, 12, 3, 13, 3, 13, 3, 13, 3, 13, 3, 13,
-	3, 13, 5, 13, 204, 10, 13, 3, 14, 3, 14, 5, 14, 208, 10, 14, 3, 14, 3,
-	14, 3, 14, 5, 14, 213, 10, 14, 3, 15, 3, 15, 5, 15, 217, 10, 15, 3, 16,
-	3, 16, 3, 16, 3, 16, 3, 16, 3, 16, 7, 16, 225, 10, 16, 12, 16, 14, 16,
-	228, 11, 16, 3, 16, 5, 16, 231, 10, 16, 3, 17, 3, 17, 3, 17, 3, 17, 3,
-	17, 3, 17, 3, 17, 3, 18, 3, 18, 3, 18, 3, 18, 3, 18, 3, 19, 3, 19, 3, 19,
-	3, 19, 3, 19, 3, 19, 3, 19, 3, 19, 3, 19, 3, 19, 3, 20, 3, 20, 3, 21, 3,
-	21, 3, 21, 3, 21, 3, 21, 3, 21, 3, 21, 3, 21, 3, 22, 3, 22, 3, 23, 3, 23,
-	3, 23, 3, 23, 3, 23, 3, 23, 3, 23, 3, 23, 5, 23, 275, 10, 23, 3, 24, 3,
-	24, 3, 24, 3, 24, 3, 24, 3, 24, 3, 24, 5, 24, 284, 10, 24, 3, 24, 3, 24,
-	3, 24, 3, 24, 3, 24, 3, 24, 3, 24, 3, 24, 5, 24, 294, 10, 24, 7, 24, 296,
-	10, 24, 12, 24, 14, 24, 299, 11, 24, 3, 25, 5, 25, 302, 10, 25, 3, 25,
-	3, 25, 3, 26, 5, 26, 307, 10, 26, 3, 26, 3, 26, 3, 27, 3, 27, 3, 28, 3,
-	28, 3, 29, 3, 29, 3, 29, 5, 29, 318, 10, 29, 3, 29, 3, 29, 3, 30, 3, 30,
-	3, 30, 5, 30, 325, 10, 30, 3, 30, 3, 30, 3, 31, 3, 31, 3, 31, 5, 31, 332,
-	10, 31, 3, 31, 3, 31, 3, 32, 3, 32, 3, 33, 3, 33, 3, 34, 3, 34, 3, 35,
-	3, 35, 3, 36, 3, 36, 3, 37, 3, 37, 3, 38, 3, 38, 3, 39, 3, 39, 3, 40, 3,
-	40, 3, 40, 3, 40, 3, 40, 5, 40, 357, 10, 40, 3, 40, 3, 40, 3, 41, 3, 41,
-	3, 42, 3, 42, 3, 43, 3, 43, 3, 44, 3, 44, 3, 44, 2, 4, 20, 22, 45, 2, 4,
-	6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42,
-	44, 46, 48, 50, 52, 54, 56, 58, 60, 62, 64, 66, 68, 70, 72, 74, 76, 78,
-	80, 82, 84, 86, 2, 9, 3, 2, 20, 21, 4, 2, 26, 26, 54, 55, 3, 2, 28, 29,
-	3, 2, 30, 31, 3, 2, 32, 37, 3, 2, 10, 11, 3, 2, 39, 44, 2, 389, 2, 89,
-	3, 2, 2, 2, 4, 93, 3, 2, 2, 2, 6, 105, 3, 2, 2, 2, 8, 107, 3, 2, 2, 2,
-	10, 109, 3, 2, 2, 2, 12, 112, 3, 2, 2, 2, 14, 117, 3, 2, 2, 2, 16, 133,
-	3, 2, 2, 2, 18, 135, 3, 2, 2, 2, 20, 161, 3, 2, 2, 2, 22, 182, 3, 2, 2,
-	2, 24, 203, 3, 2, 2, 2, 26, 207, 3, 2, 2, 2, 28, 214, 3, 2, 2, 2, 30, 218,
-	3, 2, 2, 2, 32, 232, 3, 2, 2, 2, 34, 239, 3, 2, 2, 2, 36, 244, 3, 2, 2,
-	2, 38, 254, 3, 2, 2, 2, 40, 256, 3, 2, 2, 2, 42, 264, 3, 2, 2, 2, 44, 274,
-	3, 2, 2, 2, 46, 283, 3, 2, 2, 2, 48, 301, 3, 2, 2, 2, 50, 306, 3, 2, 2,
-	2, 52, 310, 3, 2, 2, 2, 54, 312, 3, 2, 2, 2, 56, 314, 3, 2, 2, 2, 58, 321,
-	3, 2, 2, 2, 60, 328, 3, 2, 2, 2, 62, 335, 3, 2, 2, 2, 64, 337, 3, 2, 2,
-	2, 66, 339, 3, 2, 2, 2, 68, 341, 3, 2, 2, 2, 70, 343, 3, 2, 2, 2, 72, 345,
-	3, 2, 2, 2, 74, 347, 3, 2, 2, 2, 76, 349, 3, 2, 2, 2, 78, 351, 3, 2, 2,
-	2, 80, 360, 3, 2, 2, 2, 82, 362, 3, 2, 2, 2, 84, 364, 3, 2, 2, 2, 86, 366,
-	3, 2, 2, 2, 88, 90, 5, 4, 3, 2, 89, 88, 3, 2, 2, 2, 90, 91, 3, 2, 2, 2,
-	91, 89, 3, 2, 2, 2, 91, 92, 3, 2, 2, 2, 92, 3, 3, 2, 2, 2, 93, 94, 7, 9,
-	2, 2, 94, 96, 5, 6, 4, 2, 95, 97, 5, 8, 5, 2, 96, 95, 3, 2, 2, 2, 96, 97,
-	3, 2, 2, 2, 97, 99, 3, 2, 2, 2, 98, 100, 5, 10, 6, 2, 99, 98, 3, 2, 2,
-	2, 99, 100, 3, 2, 2, 2, 100, 101, 3, 2, 2, 2, 101, 102, 7, 24, 2, 2, 102,
-	103, 5, 12, 7, 2, 103, 104, 7, 25, 2, 2, 104, 5, 3, 2, 2, 2, 105, 106,
-	5, 52, 27, 2, 106, 7, 3, 2, 2, 2, 107, 108, 5, 52, 27, 2, 108, 9, 3, 2,
-	2, 2, 109, 110, 7, 23, 2, 2, 110, 111, 5, 48, 25, 2, 111, 11, 3, 2, 2,
-	2, 112, 113, 5, 14, 8, 2, 113, 13, 3, 2, 2, 2, 114, 116, 5, 16, 9, 2, 115,
-	114, 3, 2, 2, 2, 116, 119, 3, 2, 2, 2, 117, 115, 3, 2, 2, 2, 117, 118,
-	3, 2, 2, 2, 118, 121, 3, 2, 2, 2, 119, 117, 3, 2, 2, 2, 120, 122, 5, 28,
-	15, 2, 121, 120, 3, 2, 2, 2, 121, 122, 3, 2, 2, 2, 122, 15, 3, 2, 2, 2,
-	123, 134, 5, 30, 16, 2, 124, 134, 5, 56, 29, 2, 125, 134, 5, 58, 30, 2,
-	126, 134, 5, 60, 31, 2, 127, 134, 5, 26, 14, 2, 128, 134, 5, 18, 10, 2,
-	129, 134, 5, 36, 19, 2, 130, 134, 5, 38, 20, 2, 131, 134, 5, 40, 21, 2,
-	132, 134, 5, 42, 22, 2, 133, 123, 3, 2, 2, 2, 133, 124, 3, 2, 2, 2, 133,
-	125, 3, 2, 2, 2, 133, 126, 3, 2, 2, 2, 133, 127, 3, 2, 2, 2, 133, 128,
-	3, 2, 2, 2, 133, 129, 3, 2, 2, 2, 133, 130, 3, 2, 2, 2, 133, 131, 3, 2,
-	2, 2, 133, 132, 3, 2, 2, 2, 134, 17, 3, 2, 2, 2, 135, 136, 7, 12, 2, 2,
-	136, 143, 7, 48, 2, 2, 137, 142, 5, 56, 29, 2, 138, 142, 5, 58, 30, 2,
-	139, 142, 5, 60, 31, 2, 140, 142, 5, 26, 14, 2, 141, 137, 3, 2, 2, 2, 141,
-	138, 3, 2, 2, 2, 141, 139, 3, 2, 2, 2, 141, 140, 3, 2, 2, 2, 142, 145,
-	3, 2, 2, 2, 143, 141, 3, 2, 2, 2, 143, 144, 3, 2, 2, 2, 144, 146, 3, 2,
-	2, 2, 145, 143, 3, 2, 2, 2, 146, 147, 7, 49, 2, 2, 147, 19, 3, 2, 2, 2,
-	148, 149, 8, 11, 1, 2, 149, 162, 5, 22, 12, 2, 150, 152, 5, 76, 39, 2,
-	151, 150, 3, 2, 2, 2, 151, 152, 3, 2, 2, 2, 152, 153, 3, 2, 2, 2, 153,
-	162, 5, 24, 13, 2, 154, 156, 5, 76, 39, 2, 155, 154, 3, 2, 2, 2, 155, 156,
-	3, 2, 2, 2, 156, 157, 3, 2, 2, 2, 157, 158, 7, 50, 2, 2, 158, 159, 5, 20,
-	11, 2, 159, 160, 7, 51, 2, 2, 160, 162, 3, 2, 2, 2, 161, 148, 3, 2, 2,
-	2, 161, 151, 3, 2, 2, 2, 161, 155, 3, 2, 2, 2, 162, 173, 3, 2, 2, 2, 163,
-	164, 12, 6, 2, 2, 164, 165, 5, 68, 35, 2, 165, 166, 5, 20, 11, 7, 166,
-	172, 3, 2, 2, 2, 167, 168, 12, 5, 2, 2, 168, 169, 5, 70, 36, 2, 169, 170,
-	5, 20, 11, 6, 170, 172, 3, 2, 2, 2, 171, 163, 3, 2, 2, 2, 171, 167, 3,
-	2, 2, 2, 172, 175, 3, 2, 2, 2, 173, 171, 3, 2, 2, 2, 173, 174, 3, 2, 2,
-	2, 174, 21, 3, 2, 2, 2, 175, 173, 3, 2, 2, 2, 176, 177, 8, 12, 1, 2, 177,
-	183, 5, 24, 13, 2, 178, 179, 7, 50, 2, 2, 179, 180, 5, 22, 12, 2, 180,
-	181, 7, 51, 2, 2, 181, 183, 3, 2, 2, 2, 182, 176, 3, 2, 2, 2, 182, 178,
-	3, 2, 2, 2, 183, 194, 3, 2, 2, 2, 184, 185, 12, 6, 2, 2, 185, 186, 5, 66,
-	34, 2, 186, 187, 5, 22, 12, 7, 187, 193, 3, 2, 2, 2, 188, 189, 12, 5, 2,
-	2, 189, 190, 5, 64, 33, 2, 190, 191, 5, 22, 12, 6, 191, 193, 3, 2, 2, 2,
-	192, 184, 3, 2, 2, 2, 192, 188, 3, 2, 2, 2, 193, 196, 3, 2, 2, 2, 194,
-	192, 3, 2, 2, 2, 194, 195, 3, 2, 2, 2, 195, 23, 3, 2, 2, 2, 196, 194, 3,
-	2, 2, 2, 197, 204, 5, 56, 29, 2, 198, 204, 5, 58, 30, 2, 199, 204, 5, 60,
-	31, 2, 200, 204, 5, 44, 23, 2, 201, 204, 5, 78, 40, 2, 202, 204, 5, 62,
-	32, 2, 203, 197, 3, 2, 2, 2, 203, 198, 3, 2, 2, 2, 203, 199, 3, 2, 2, 2,
-	203, 200, 3, 2, 2, 2, 203, 201, 3, 2, 2, 2, 203, 202, 3, 2, 2, 2, 204,
-	25, 3, 2, 2, 2, 205, 208, 5, 78, 40, 2, 206, 208, 5, 62, 32, 2, 207, 205,
-	3, 2, 2, 2, 207, 206, 3, 2, 2, 2, 208, 209, 3, 2, 2, 2, 209, 212, 5, 72,
-	37, 2, 210, 213, 5, 22, 12, 2, 211, 213, 5, 20, 11, 2, 212, 210, 3, 2,
-	2, 2, 212, 211, 3, 2, 2, 2, 213, 27, 3, 2, 2, 2, 214, 216, 7, 15, 2, 2,
-	215, 217, 5, 20, 11, 2, 216, 215, 3, 2, 2, 2, 216, 217, 3, 2, 2, 2, 217,
-	29, 3, 2, 2, 2, 218, 219, 7, 13, 2, 2, 219, 220, 5, 20, 11, 2, 220, 221,
-	7, 48, 2, 2, 221, 222, 5, 14, 8, 2, 222, 226, 7, 49, 2, 2, 223, 225, 5,
-	32, 17, 2, 224, 223, 3, 2, 2, 2, 225, 228, 3, 2, 2, 2, 226, 224, 3, 2,
-	2, 2, 226, 227, 3, 2, 2, 2, 227, 230, 3, 2, 2, 2, 228, 226, 3, 2, 2, 2,
-	229, 231, 5, 34, 18, 2, 230, 229, 3, 2, 2, 2, 230, 231, 3, 2, 2, 2, 231,
-	31, 3, 2, 2, 2, 232, 233, 7, 14, 2, 2, 233, 234, 7, 13, 2, 2, 234, 235,
-	5, 20, 11, 2, 235, 236, 7, 48, 2, 2, 236, 237, 5, 14, 8, 2, 237, 238, 7,
-	49, 2, 2, 238, 33, 3, 2, 2, 2, 239, 240, 7, 14, 2, 2, 240, 241, 7, 48,
-	2, 2, 241, 242, 5, 14, 8, 2, 242, 243, 7, 49, 2, 2, 243, 35, 3, 2, 2, 2,
-	244, 245, 7, 16, 2, 2, 245, 246, 5, 26, 14, 2, 246, 247, 7, 47, 2, 2, 247,
-	248, 5, 20, 11, 2, 248, 249, 7, 47, 2, 2, 249, 250, 5, 26, 14, 2, 250,
-	251, 7, 48, 2, 2, 251, 252, 5, 14, 8, 2, 252, 253, 7, 49, 2, 2, 253, 37,
-	3, 2, 2, 2, 254, 255, 7, 17, 2, 2, 255, 39, 3, 2, 2, 2, 256, 257, 7, 18,
-	2, 2, 257, 258, 5, 62, 32, 2, 258, 259, 5, 74, 38, 2, 259, 260, 5, 62,
-	32, 2, 260, 261, 7, 48, 2, 2, 261, 262, 5, 14, 8, 2, 262, 263, 7, 49, 2,
-	2, 263, 41, 3, 2, 2, 2, 264, 265, 7, 19, 2, 2, 265, 43, 3, 2, 2, 2, 266,
-	275, 5, 54, 28, 2, 267, 275, 5, 48, 25, 2, 268, 275, 5, 50, 26, 2, 269,
-	275, 5, 52, 27, 2, 270, 275, 5, 80, 41, 2, 271, 275, 5, 82, 42, 2, 272,
-	275, 5, 84, 43, 2, 273, 275, 5, 86, 44, 2, 274, 266, 3, 2, 2, 2, 274, 267,
-	3, 2, 2, 2, 274, 268, 3, 2, 2, 2, 274, 269, 3, 2, 2, 2, 274, 270, 3, 2,
-	2, 2, 274, 271, 3, 2, 2, 2, 274, 272, 3, 2, 2, 2, 274, 273, 3, 2, 2, 2,
-	275, 45, 3, 2, 2, 2, 276, 284, 5, 44, 23, 2, 277, 284, 5, 62, 32, 2, 278,
-	284, 5, 56, 29, 2, 279, 284, 5, 58, 30, 2, 280, 284, 5, 60, 31, 2, 281,
-	284, 5, 78, 40, 2, 282, 284, 5, 20, 11, 2, 283, 276, 3, 2, 2, 2, 283, 277,
-	3, 2, 2, 2, 283, 278, 3, 2, 2, 2, 283, 279, 3, 2, 2, 2, 283, 280, 3, 2,
-	2, 2, 283, 281, 3, 2, 2, 2, 283, 282, 3, 2, 2, 2, 284, 297, 3, 2, 2, 2,
-	285, 293, 7, 3, 2, 2, 286, 294, 5, 44, 23, 2, 287, 294, 5, 62, 32, 2, 288,
-	294, 5, 56, 29, 2, 289, 294, 5, 58, 30, 2, 290, 294, 5, 60, 31, 2, 291,
-	294, 5, 78, 40, 2, 292, 294, 5, 20, 11, 2, 293, 286, 3, 2, 2, 2, 293, 287,
-	3, 2, 2, 2, 293, 288, 3, 2, 2, 2, 293, 289, 3, 2, 2, 2, 293, 290, 3, 2,
-	2, 2, 293, 291, 3, 2, 2, 2, 293, 292, 3, 2, 2, 2, 294, 296, 3, 2, 2, 2,
-	295, 285, 3, 2, 2, 2, 296, 299, 3, 2, 2, 2, 297, 295, 3, 2, 2, 2, 297,
-	298, 3, 2, 2, 2, 298, 47, 3, 2, 2, 2, 299, 297, 3, 2, 2, 2, 300, 302, 7,
-	29, 2, 2, 301, 300, 3, 2, 2, 2, 301, 302, 3, 2, 2, 2, 302, 303, 3, 2, 2,
-	2, 303, 304, 7, 27, 2, 2, 304, 49, 3, 2, 2, 2, 305, 307, 7, 29, 2, 2, 306,
-	305, 3, 2, 2, 2, 306, 307, 3, 2, 2, 2, 307, 308, 3, 2, 2, 2, 308, 309,
-	7, 56, 2, 2, 309, 51, 3, 2, 2, 2, 310, 311, 7, 53, 2, 2, 311, 53, 3, 2,
-	2, 2, 312, 313, 9, 2, 2, 2, 313, 55, 3, 2, 2, 2, 314, 315, 7, 26, 2, 2,
-	315, 317, 7, 50, 2, 2, 316, 318, 5, 46, 24, 2, 317, 316, 3, 2, 2, 2, 317,
-	318, 3, 2, 2, 2, 318, 319, 3, 2, 2, 2, 319, 320, 7, 51, 2, 2, 320, 57,
-	3, 2, 2, 2, 321, 322, 7, 54, 2, 2, 322, 324, 7, 50, 2, 2, 323, 325, 5,
-	46, 24, 2, 324, 323, 3, 2, 2, 2, 324, 325, 3, 2, 2, 2, 325, 326, 3, 2,
-	2, 2, 326, 327, 7, 51, 2, 2, 327, 59, 3, 2, 2, 2, 328, 329, 7, 55, 2, 2,
-	329, 331, 7, 50, 2, 2, 330, 332, 5, 46, 24, 2, 331, 330, 3, 2, 2, 2, 331,
-	332, 3, 2, 2, 2, 332, 333, 3, 2, 2, 2, 333, 334, 7, 51, 2, 2, 334, 61,
-	3, 2, 2, 2, 335, 336, 9, 3, 2, 2, 336, 63, 3, 2, 2, 2, 337, 338, 9, 4,
-	2, 2, 338, 65, 3, 2, 2, 2, 339, 340, 9, 5, 2, 2, 340, 67, 3, 2, 2, 2, 341,
-	342, 9, 6, 2, 2, 342, 69, 3, 2, 2, 2, 343, 344, 9, 7, 2, 2, 344, 71, 3,
-	2, 2, 2, 345, 346, 9, 8, 2, 2, 346, 73, 3, 2, 2, 2, 347, 348, 7, 39, 2,
-	2, 348, 75, 3, 2, 2, 2, 349, 350, 7, 38, 2, 2, 350, 77, 3, 2, 2, 2, 351,
-	352, 5, 62, 32, 2, 352, 356, 7, 45, 2, 2, 353, 357, 5, 48, 25, 2, 354,
-	357, 5, 52, 27, 2, 355, 357, 5, 62, 32, 2, 356, 353, 3, 2, 2, 2, 356, 354,
-	3, 2, 2, 2, 356, 355, 3, 2, 2, 2, 357, 358, 3, 2, 2, 2, 358, 359, 7, 46,
-	2, 2, 359, 79, 3, 2, 2, 2, 360, 361, 7, 4, 2, 2, 361, 81, 3, 2, 2, 2, 362,
-	363, 7, 5, 2, 2, 363, 83, 3, 2, 2, 2, 364, 365, 7, 6, 2, 2, 365, 85, 3,
-	2, 2, 2, 366, 367, 7, 7, 2, 2, 367, 87, 3, 2, 2, 2, 34, 91, 96, 99, 117,
-	121, 133, 141, 143, 151, 155, 161, 171, 173, 182, 192, 194, 203, 207, 212,
-	216, 226, 230, 274, 283, 293, 297, 301, 306, 317, 324, 331, 356,
-}
-var literalNames = []string{
-	"", "','", "'@name'", "'@id'", "'@desc'", "'@sal'", "", "", "'&&'", "'||'",
-	"", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "'+'",
-	"'-'", "'/'", "'*'", "'=='", "'>'", "'<'", "'>='", "'<='", "'!='", "'!'",
-	"':='", "'='", "'+='", "'-='", "'*='", "'/='", "'['", "']'", "';'", "'{'",
-	"'}'", "'('", "')'", "'.'",
-}
-var symbolicNames = []string{
-	"", "", "", "", "", "", "NIL", "RULE", "AND", "OR", "CONC", "IF", "ELSE",
-	"RETURN", "FOR", "BREAK", "FORRANGE", "CONTINUE", "TRUE", "FALSE", "NULL_LITERAL",
-	"SALIENCE", "BEGIN", "END", "SIMPLENAME", "INT", "PLUS", "MINUS", "DIV",
-	"MUL", "EQUALS", "GT", "LT", "GTE", "LTE", "NOTEQUALS", "NOT", "ASSIGN",
-	"SET", "PLUSEQUAL", "MINUSEQUAL", "MULTIEQUAL", "DIVEQUAL", "LSQARE", "RSQARE",
-	"SEMICOLON", "LR_BRACE", "RR_BRACE", "LR_BRACKET", "RR_BRACKET", "DOT",
-	"DQUOTA_STRING", "DOTTEDNAME", "DOUBLEDOTTEDNAME", "REAL_LITERAL", "SL_COMMENT",
-	"WS",
-}
-
-var ruleNames = []string{
-	"primary", "ruleEntity", "ruleName", "ruleDescription", "salience", "ruleContent",
-	"statements", "statement", "concStatement", "expression", "mathExpression",
-	"expressionAtom", "assignment", "returnStmt", "ifStmt", "elseIfStmt", "elseStmt",
-	"forStmt", "breakStmt", "forRangeStmt", "continueStmt", "constant", "functionArgs",
-	"integer", "realLiteral", "stringLiteral", "booleanLiteral", "functionCall",
-	"methodCall", "threeLevelCall", "variable", "mathPmOperator", "mathMdOperator",
-	"comparisonOperator", "logicalOperator", "assignOperator", "rangeOperator",
-	"notOperator", "mapVar", "atName", "atId", "atDesc", "atSal",
-}
+var _ = sync.Once{}
 
 type gengineParser struct {
 	*antlr.BaseParser
 }
 
-// NewgengineParser produces a new parser instance for the optional input antlr.TokenStream.
-//
-// The *gengineParser instance produced may be reused by calling the SetInputStream method.
-// The initial parser configuration is expensive to construct, and the object is not thread-safe;
-// however, if used within a Golang sync.Pool, the construction cost amortizes well and the
-// objects can be used in a thread-safe manner.
-func NewgengineParser(input antlr.TokenStream) *gengineParser {
-	this := new(gengineParser)
-	deserializer := antlr.NewATNDeserializer(nil)
-	deserializedATN := deserializer.DeserializeFromUInt16(parserATN)
-	decisionToDFA := make([]*antlr.DFA, len(deserializedATN.DecisionToState))
-	for index, ds := range deserializedATN.DecisionToState {
-		decisionToDFA[index] = antlr.NewDFA(ds, index)
-	}
-	this.BaseParser = antlr.NewBaseParser(input)
+var gengineParserStaticData struct {
+	once                   sync.Once
+	serializedATN          []int32
+	literalNames           []string
+	symbolicNames          []string
+	ruleNames              []string
+	predictionContextCache *antlr.PredictionContextCache
+	atn                    *antlr.ATN
+	decisionToDFA          []*antlr.DFA
+}
 
-	this.Interpreter = antlr.NewParserATNSimulator(this, deserializedATN, decisionToDFA, antlr.NewPredictionContextCache())
-	this.RuleNames = ruleNames
-	this.LiteralNames = literalNames
-	this.SymbolicNames = symbolicNames
-	this.GrammarFileName = "gengine.g4"
+func gengineParserInit() {
+	staticData := &gengineParserStaticData
+	staticData.literalNames = []string{
+		"", "','", "'@name'", "'@id'", "'@desc'", "'@sal'", "", "", "'&&'",
+		"'||'", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
+		"", "'+'", "'-'", "'/'", "'*'", "'=='", "'>'", "'<'", "'>='", "'<='",
+		"'!='", "'!'", "':='", "'='", "'+='", "'-='", "'*='", "'/='", "'['",
+		"']'", "';'", "'{'", "'}'", "'('", "')'", "'.'",
+	}
+	staticData.symbolicNames = []string{
+		"", "", "", "", "", "", "NIL", "RULE", "AND", "OR", "CONC", "IF", "ELSE",
+		"RETURN", "FOR", "BREAK", "FORRANGE", "CONTINUE", "TRUE", "FALSE", "NULL_LITERAL",
+		"SALIENCE", "BEGIN", "END", "SIMPLENAME", "INT", "PLUS", "MINUS", "DIV",
+		"MUL", "EQUALS", "GT", "LT", "GTE", "LTE", "NOTEQUALS", "NOT", "ASSIGN",
+		"SET", "PLUSEQUAL", "MINUSEQUAL", "MULTIEQUAL", "DIVEQUAL", "LSQARE",
+		"RSQARE", "SEMICOLON", "LR_BRACE", "RR_BRACE", "LR_BRACKET", "RR_BRACKET",
+		"DOT", "DQUOTA_STRING", "BACKQUOTA_STRING", "DOTTEDNAME", "DOUBLEDOTTEDNAME",
+		"REAL_LITERAL", "SL_COMMENT", "WS",
+	}
+	staticData.ruleNames = []string{
+		"primary", "ruleEntity", "ruleName", "ruleDescription", "salience",
+		"ruleContent", "statements", "statement", "concStatement", "expression",
+		"mathExpression", "expressionAtom", "assignment", "returnStmt", "ifStmt",
+		"elseIfStmt", "elseStmt", "forStmt", "breakStmt", "forRangeStmt", "continueStmt",
+		"constant", "functionArgs", "integer", "realLiteral", "stringLiteral",
+		"booleanLiteral", "functionCall", "methodCall", "threeLevelCall", "variable",
+		"mathPmOperator", "mathMdOperator", "comparisonOperator", "logicalOperator",
+		"assignOperator", "rangeOperator", "notOperator", "mapVar", "atName",
+		"atId", "atDesc", "atSal",
+	}
+	staticData.predictionContextCache = antlr.NewPredictionContextCache()
+	staticData.serializedATN = []int32{
+		4, 1, 57, 367, 2, 0, 7, 0, 2, 1, 7, 1, 2, 2, 7, 2, 2, 3, 7, 3, 2, 4, 7,
+		4, 2, 5, 7, 5, 2, 6, 7, 6, 2, 7, 7, 7, 2, 8, 7, 8, 2, 9, 7, 9, 2, 10, 7,
+		10, 2, 11, 7, 11, 2, 12, 7, 12, 2, 13, 7, 13, 2, 14, 7, 14, 2, 15, 7, 15,
+		2, 16, 7, 16, 2, 17, 7, 17, 2, 18, 7, 18, 2, 19, 7, 19, 2, 20, 7, 20, 2,
+		21, 7, 21, 2, 22, 7, 22, 2, 23, 7, 23, 2, 24, 7, 24, 2, 25, 7, 25, 2, 26,
+		7, 26, 2, 27, 7, 27, 2, 28, 7, 28, 2, 29, 7, 29, 2, 30, 7, 30, 2, 31, 7,
+		31, 2, 32, 7, 32, 2, 33, 7, 33, 2, 34, 7, 34, 2, 35, 7, 35, 2, 36, 7, 36,
+		2, 37, 7, 37, 2, 38, 7, 38, 2, 39, 7, 39, 2, 40, 7, 40, 2, 41, 7, 41, 2,
+		42, 7, 42, 1, 0, 4, 0, 88, 8, 0, 11, 0, 12, 0, 89, 1, 1, 1, 1, 1, 1, 3,
+		1, 95, 8, 1, 1, 1, 3, 1, 98, 8, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 2,
+		1, 3, 1, 3, 1, 4, 1, 4, 1, 4, 1, 5, 1, 5, 1, 6, 5, 6, 114, 8, 6, 10, 6,
+		12, 6, 117, 9, 6, 1, 6, 3, 6, 120, 8, 6, 1, 7, 1, 7, 1, 7, 1, 7, 1, 7,
+		1, 7, 1, 7, 1, 7, 1, 7, 1, 7, 3, 7, 132, 8, 7, 1, 8, 1, 8, 1, 8, 1, 8,
+		1, 8, 1, 8, 5, 8, 140, 8, 8, 10, 8, 12, 8, 143, 9, 8, 1, 8, 1, 8, 1, 9,
+		1, 9, 1, 9, 3, 9, 150, 8, 9, 1, 9, 1, 9, 3, 9, 154, 8, 9, 1, 9, 1, 9, 1,
+		9, 1, 9, 3, 9, 160, 8, 9, 1, 9, 1, 9, 1, 9, 1, 9, 1, 9, 1, 9, 1, 9, 1,
+		9, 5, 9, 170, 8, 9, 10, 9, 12, 9, 173, 9, 9, 1, 10, 1, 10, 1, 10, 1, 10,
+		1, 10, 1, 10, 3, 10, 181, 8, 10, 1, 10, 1, 10, 1, 10, 1, 10, 1, 10, 1,
+		10, 1, 10, 1, 10, 5, 10, 191, 8, 10, 10, 10, 12, 10, 194, 9, 10, 1, 11,
+		1, 11, 1, 11, 1, 11, 1, 11, 1, 11, 3, 11, 202, 8, 11, 1, 12, 1, 12, 3,
+		12, 206, 8, 12, 1, 12, 1, 12, 1, 12, 3, 12, 211, 8, 12, 1, 13, 1, 13, 3,
+		13, 215, 8, 13, 1, 14, 1, 14, 1, 14, 1, 14, 1, 14, 1, 14, 5, 14, 223, 8,
+		14, 10, 14, 12, 14, 226, 9, 14, 1, 14, 3, 14, 229, 8, 14, 1, 15, 1, 15,
+		1, 15, 1, 15, 1, 15, 1, 15, 1, 15, 1, 16, 1, 16, 1, 16, 1, 16, 1, 16, 1,
+		17, 1, 17, 1, 17, 1, 17, 1, 17, 1, 17, 1, 17, 1, 17, 1, 17, 1, 17, 1, 18,
+		1, 18, 1, 19, 1, 19, 1, 19, 1, 19, 1, 19, 1, 19, 1, 19, 1, 19, 1, 20, 1,
+		20, 1, 21, 1, 21, 1, 21, 1, 21, 1, 21, 1, 21, 1, 21, 1, 21, 3, 21, 273,
+		8, 21, 1, 22, 1, 22, 1, 22, 1, 22, 1, 22, 1, 22, 1, 22, 3, 22, 282, 8,
+		22, 1, 22, 1, 22, 1, 22, 1, 22, 1, 22, 1, 22, 1, 22, 1, 22, 3, 22, 292,
+		8, 22, 5, 22, 294, 8, 22, 10, 22, 12, 22, 297, 9, 22, 1, 23, 3, 23, 300,
+		8, 23, 1, 23, 1, 23, 1, 24, 3, 24, 305, 8, 24, 1, 24, 1, 24, 1, 25, 1,
+		25, 1, 26, 1, 26, 1, 27, 1, 27, 1, 27, 3, 27, 316, 8, 27, 1, 27, 1, 27,
+		1, 28, 1, 28, 1, 28, 3, 28, 323, 8, 28, 1, 28, 1, 28, 1, 29, 1, 29, 1,
+		29, 3, 29, 330, 8, 29, 1, 29, 1, 29, 1, 30, 1, 30, 1, 31, 1, 31, 1, 32,
+		1, 32, 1, 33, 1, 33, 1, 34, 1, 34, 1, 35, 1, 35, 1, 36, 1, 36, 1, 37, 1,
+		37, 1, 38, 1, 38, 1, 38, 1, 38, 1, 38, 3, 38, 355, 8, 38, 1, 38, 1, 38,
+		1, 39, 1, 39, 1, 40, 1, 40, 1, 41, 1, 41, 1, 42, 1, 42, 1, 42, 0, 2, 18,
+		20, 43, 0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32,
+		34, 36, 38, 40, 42, 44, 46, 48, 50, 52, 54, 56, 58, 60, 62, 64, 66, 68,
+		70, 72, 74, 76, 78, 80, 82, 84, 0, 8, 1, 0, 51, 52, 1, 0, 18, 19, 2, 0,
+		24, 24, 53, 54, 1, 0, 26, 27, 1, 0, 28, 29, 1, 0, 30, 35, 1, 0, 8, 9, 1,
+		0, 37, 42, 387, 0, 87, 1, 0, 0, 0, 2, 91, 1, 0, 0, 0, 4, 103, 1, 0, 0,
+		0, 6, 105, 1, 0, 0, 0, 8, 107, 1, 0, 0, 0, 10, 110, 1, 0, 0, 0, 12, 115,
+		1, 0, 0, 0, 14, 131, 1, 0, 0, 0, 16, 133, 1, 0, 0, 0, 18, 159, 1, 0, 0,
+		0, 20, 180, 1, 0, 0, 0, 22, 201, 1, 0, 0, 0, 24, 205, 1, 0, 0, 0, 26, 212,
+		1, 0, 0, 0, 28, 216, 1, 0, 0, 0, 30, 230, 1, 0, 0, 0, 32, 237, 1, 0, 0,
+		0, 34, 242, 1, 0, 0, 0, 36, 252, 1, 0, 0, 0, 38, 254, 1, 0, 0, 0, 40, 262,
+		1, 0, 0, 0, 42, 272, 1, 0, 0, 0, 44, 281, 1, 0, 0, 0, 46, 299, 1, 0, 0,
+		0, 48, 304, 1, 0, 0, 0, 50, 308, 1, 0, 0, 0, 52, 310, 1, 0, 0, 0, 54, 312,
+		1, 0, 0, 0, 56, 319, 1, 0, 0, 0, 58, 326, 1, 0, 0, 0, 60, 333, 1, 0, 0,
+		0, 62, 335, 1, 0, 0, 0, 64, 337, 1, 0, 0, 0, 66, 339, 1, 0, 0, 0, 68, 341,
+		1, 0, 0, 0, 70, 343, 1, 0, 0, 0, 72, 345, 1, 0, 0, 0, 74, 347, 1, 0, 0,
+		0, 76, 349, 1, 0, 0, 0, 78, 358, 1, 0, 0, 0, 80, 360, 1, 0, 0, 0, 82, 362,
+		1, 0, 0, 0, 84, 364, 1, 0, 0, 0, 86, 88, 3, 2, 1, 0, 87, 86, 1, 0, 0, 0,
+		88, 89, 1, 0, 0, 0, 89, 87, 1, 0, 0, 0, 89, 90, 1, 0, 0, 0, 90, 1, 1, 0,
+		0, 0, 91, 92, 5, 7, 0, 0, 92, 94, 3, 4, 2, 0, 93, 95, 3, 6, 3, 0, 94, 93,
+		1, 0, 0, 0, 94, 95, 1, 0, 0, 0, 95, 97, 1, 0, 0, 0, 96, 98, 3, 8, 4, 0,
+		97, 96, 1, 0, 0, 0, 97, 98, 1, 0, 0, 0, 98, 99, 1, 0, 0, 0, 99, 100, 5,
+		22, 0, 0, 100, 101, 3, 10, 5, 0, 101, 102, 5, 23, 0, 0, 102, 3, 1, 0, 0,
+		0, 103, 104, 3, 50, 25, 0, 104, 5, 1, 0, 0, 0, 105, 106, 3, 50, 25, 0,
+		106, 7, 1, 0, 0, 0, 107, 108, 5, 21, 0, 0, 108, 109, 3, 46, 23, 0, 109,
+		9, 1, 0, 0, 0, 110, 111, 3, 12, 6, 0, 111, 11, 1, 0, 0, 0, 112, 114, 3,
+		14, 7, 0, 113, 112, 1, 0, 0, 0, 114, 117, 1, 0, 0, 0, 115, 113, 1, 0, 0,
+		0, 115, 116, 1, 0, 0, 0, 116, 119, 1, 0, 0, 0, 117, 115, 1, 0, 0, 0, 118,
+		120, 3, 26, 13, 0, 119, 118, 1, 0, 0, 0, 119, 120, 1, 0, 0, 0, 120, 13,
+		1, 0, 0, 0, 121, 132, 3, 28, 14, 0, 122, 132, 3, 54, 27, 0, 123, 132, 3,
+		56, 28, 0, 124, 132, 3, 58, 29, 0, 125, 132, 3, 24, 12, 0, 126, 132, 3,
+		16, 8, 0, 127, 132, 3, 34, 17, 0, 128, 132, 3, 36, 18, 0, 129, 132, 3,
+		38, 19, 0, 130, 132, 3, 40, 20, 0, 131, 121, 1, 0, 0, 0, 131, 122, 1, 0,
+		0, 0, 131, 123, 1, 0, 0, 0, 131, 124, 1, 0, 0, 0, 131, 125, 1, 0, 0, 0,
+		131, 126, 1, 0, 0, 0, 131, 127, 1, 0, 0, 0, 131, 128, 1, 0, 0, 0, 131,
+		129, 1, 0, 0, 0, 131, 130, 1, 0, 0, 0, 132, 15, 1, 0, 0, 0, 133, 134, 5,
+		10, 0, 0, 134, 141, 5, 46, 0, 0, 135, 140, 3, 54, 27, 0, 136, 140, 3, 56,
+		28, 0, 137, 140, 3, 58, 29, 0, 138, 140, 3, 24, 12, 0, 139, 135, 1, 0,
+		0, 0, 139, 136, 1, 0, 0, 0, 139, 137, 1, 0, 0, 0, 139, 138, 1, 0, 0, 0,
+		140, 143, 1, 0, 0, 0, 141, 139, 1, 0, 0, 0, 141, 142, 1, 0, 0, 0, 142,
+		144, 1, 0, 0, 0, 143, 141, 1, 0, 0, 0, 144, 145, 5, 47, 0, 0, 145, 17,
+		1, 0, 0, 0, 146, 147, 6, 9, -1, 0, 147, 160, 3, 20, 10, 0, 148, 150, 3,
+		74, 37, 0, 149, 148, 1, 0, 0, 0, 149, 150, 1, 0, 0, 0, 150, 151, 1, 0,
+		0, 0, 151, 160, 3, 22, 11, 0, 152, 154, 3, 74, 37, 0, 153, 152, 1, 0, 0,
+		0, 153, 154, 1, 0, 0, 0, 154, 155, 1, 0, 0, 0, 155, 156, 5, 48, 0, 0, 156,
+		157, 3, 18, 9, 0, 157, 158, 5, 49, 0, 0, 158, 160, 1, 0, 0, 0, 159, 146,
+		1, 0, 0, 0, 159, 149, 1, 0, 0, 0, 159, 153, 1, 0, 0, 0, 160, 171, 1, 0,
+		0, 0, 161, 162, 10, 4, 0, 0, 162, 163, 3, 66, 33, 0, 163, 164, 3, 18, 9,
+		5, 164, 170, 1, 0, 0, 0, 165, 166, 10, 3, 0, 0, 166, 167, 3, 68, 34, 0,
+		167, 168, 3, 18, 9, 4, 168, 170, 1, 0, 0, 0, 169, 161, 1, 0, 0, 0, 169,
+		165, 1, 0, 0, 0, 170, 173, 1, 0, 0, 0, 171, 169, 1, 0, 0, 0, 171, 172,
+		1, 0, 0, 0, 172, 19, 1, 0, 0, 0, 173, 171, 1, 0, 0, 0, 174, 175, 6, 10,
+		-1, 0, 175, 181, 3, 22, 11, 0, 176, 177, 5, 48, 0, 0, 177, 178, 3, 20,
+		10, 0, 178, 179, 5, 49, 0, 0, 179, 181, 1, 0, 0, 0, 180, 174, 1, 0, 0,
+		0, 180, 176, 1, 0, 0, 0, 181, 192, 1, 0, 0, 0, 182, 183, 10, 4, 0, 0, 183,
+		184, 3, 64, 32, 0, 184, 185, 3, 20, 10, 5, 185, 191, 1, 0, 0, 0, 186, 187,
+		10, 3, 0, 0, 187, 188, 3, 62, 31, 0, 188, 189, 3, 20, 10, 4, 189, 191,
+		1, 0, 0, 0, 190, 182, 1, 0, 0, 0, 190, 186, 1, 0, 0, 0, 191, 194, 1, 0,
+		0, 0, 192, 190, 1, 0, 0, 0, 192, 193, 1, 0, 0, 0, 193, 21, 1, 0, 0, 0,
+		194, 192, 1, 0, 0, 0, 195, 202, 3, 54, 27, 0, 196, 202, 3, 56, 28, 0, 197,
+		202, 3, 58, 29, 0, 198, 202, 3, 42, 21, 0, 199, 202, 3, 76, 38, 0, 200,
+		202, 3, 60, 30, 0, 201, 195, 1, 0, 0, 0, 201, 196, 1, 0, 0, 0, 201, 197,
+		1, 0, 0, 0, 201, 198, 1, 0, 0, 0, 201, 199, 1, 0, 0, 0, 201, 200, 1, 0,
+		0, 0, 202, 23, 1, 0, 0, 0, 203, 206, 3, 76, 38, 0, 204, 206, 3, 60, 30,
+		0, 205, 203, 1, 0, 0, 0, 205, 204, 1, 0, 0, 0, 206, 207, 1, 0, 0, 0, 207,
+		210, 3, 70, 35, 0, 208, 211, 3, 20, 10, 0, 209, 211, 3, 18, 9, 0, 210,
+		208, 1, 0, 0, 0, 210, 209, 1, 0, 0, 0, 211, 25, 1, 0, 0, 0, 212, 214, 5,
+		13, 0, 0, 213, 215, 3, 18, 9, 0, 214, 213, 1, 0, 0, 0, 214, 215, 1, 0,
+		0, 0, 215, 27, 1, 0, 0, 0, 216, 217, 5, 11, 0, 0, 217, 218, 3, 18, 9, 0,
+		218, 219, 5, 46, 0, 0, 219, 220, 3, 12, 6, 0, 220, 224, 5, 47, 0, 0, 221,
+		223, 3, 30, 15, 0, 222, 221, 1, 0, 0, 0, 223, 226, 1, 0, 0, 0, 224, 222,
+		1, 0, 0, 0, 224, 225, 1, 0, 0, 0, 225, 228, 1, 0, 0, 0, 226, 224, 1, 0,
+		0, 0, 227, 229, 3, 32, 16, 0, 228, 227, 1, 0, 0, 0, 228, 229, 1, 0, 0,
+		0, 229, 29, 1, 0, 0, 0, 230, 231, 5, 12, 0, 0, 231, 232, 5, 11, 0, 0, 232,
+		233, 3, 18, 9, 0, 233, 234, 5, 46, 0, 0, 234, 235, 3, 12, 6, 0, 235, 236,
+		5, 47, 0, 0, 236, 31, 1, 0, 0, 0, 237, 238, 5, 12, 0, 0, 238, 239, 5, 46,
+		0, 0, 239, 240, 3, 12, 6, 0, 240, 241, 5, 47, 0, 0, 241, 33, 1, 0, 0, 0,
+		242, 243, 5, 14, 0, 0, 243, 244, 3, 24, 12, 0, 244, 245, 5, 45, 0, 0, 245,
+		246, 3, 18, 9, 0, 246, 247, 5, 45, 0, 0, 247, 248, 3, 24, 12, 0, 248, 249,
+		5, 46, 0, 0, 249, 250, 3, 12, 6, 0, 250, 251, 5, 47, 0, 0, 251, 35, 1,
+		0, 0, 0, 252, 253, 5, 15, 0, 0, 253, 37, 1, 0, 0, 0, 254, 255, 5, 16, 0,
+		0, 255, 256, 3, 60, 30, 0, 256, 257, 3, 72, 36, 0, 257, 258, 3, 60, 30,
+		0, 258, 259, 5, 46, 0, 0, 259, 260, 3, 12, 6, 0, 260, 261, 5, 47, 0, 0,
+		261, 39, 1, 0, 0, 0, 262, 263, 5, 17, 0, 0, 263, 41, 1, 0, 0, 0, 264, 273,
+		3, 52, 26, 0, 265, 273, 3, 46, 23, 0, 266, 273, 3, 48, 24, 0, 267, 273,
+		3, 50, 25, 0, 268, 273, 3, 78, 39, 0, 269, 273, 3, 80, 40, 0, 270, 273,
+		3, 82, 41, 0, 271, 273, 3, 84, 42, 0, 272, 264, 1, 0, 0, 0, 272, 265, 1,
+		0, 0, 0, 272, 266, 1, 0, 0, 0, 272, 267, 1, 0, 0, 0, 272, 268, 1, 0, 0,
+		0, 272, 269, 1, 0, 0, 0, 272, 270, 1, 0, 0, 0, 272, 271, 1, 0, 0, 0, 273,
+		43, 1, 0, 0, 0, 274, 282, 3, 42, 21, 0, 275, 282, 3, 60, 30, 0, 276, 282,
+		3, 54, 27, 0, 277, 282, 3, 56, 28, 0, 278, 282, 3, 58, 29, 0, 279, 282,
+		3, 76, 38, 0, 280, 282, 3, 18, 9, 0, 281, 274, 1, 0, 0, 0, 281, 275, 1,
+		0, 0, 0, 281, 276, 1, 0, 0, 0, 281, 277, 1, 0, 0, 0, 281, 278, 1, 0, 0,
+		0, 281, 279, 1, 0, 0, 0, 281, 280, 1, 0, 0, 0, 282, 295, 1, 0, 0, 0, 283,
+		291, 5, 1, 0, 0, 284, 292, 3, 42, 21, 0, 285, 292, 3, 60, 30, 0, 286, 292,
+		3, 54, 27, 0, 287, 292, 3, 56, 28, 0, 288, 292, 3, 58, 29, 0, 289, 292,
+		3, 76, 38, 0, 290, 292, 3, 18, 9, 0, 291, 284, 1, 0, 0, 0, 291, 285, 1,
+		0, 0, 0, 291, 286, 1, 0, 0, 0, 291, 287, 1, 0, 0, 0, 291, 288, 1, 0, 0,
+		0, 291, 289, 1, 0, 0, 0, 291, 290, 1, 0, 0, 0, 292, 294, 1, 0, 0, 0, 293,
+		283, 1, 0, 0, 0, 294, 297, 1, 0, 0, 0, 295, 293, 1, 0, 0, 0, 295, 296,
+		1, 0, 0, 0, 296, 45, 1, 0, 0, 0, 297, 295, 1, 0, 0, 0, 298, 300, 5, 27,
+		0, 0, 299, 298, 1, 0, 0, 0, 299, 300, 1, 0, 0, 0, 300, 301, 1, 0, 0, 0,
+		301, 302, 5, 25, 0, 0, 302, 47, 1, 0, 0, 0, 303, 305, 5, 27, 0, 0, 304,
+		303, 1, 0, 0, 0, 304, 305, 1, 0, 0, 0, 305, 306, 1, 0, 0, 0, 306, 307,
+		5, 55, 0, 0, 307, 49, 1, 0, 0, 0, 308, 309, 7, 0, 0, 0, 309, 51, 1, 0,
+		0, 0, 310, 311, 7, 1, 0, 0, 311, 53, 1, 0, 0, 0, 312, 313, 5, 24, 0, 0,
+		313, 315, 5, 48, 0, 0, 314, 316, 3, 44, 22, 0, 315, 314, 1, 0, 0, 0, 315,
+		316, 1, 0, 0, 0, 316, 317, 1, 0, 0, 0, 317, 318, 5, 49, 0, 0, 318, 55,
+		1, 0, 0, 0, 319, 320, 5, 53, 0, 0, 320, 322, 5, 48, 0, 0, 321, 323, 3,
+		44, 22, 0, 322, 321, 1, 0, 0, 0, 322, 323, 1, 0, 0, 0, 323, 324, 1, 0,
+		0, 0, 324, 325, 5, 49, 0, 0, 325, 57, 1, 0, 0, 0, 326, 327, 5, 54, 0, 0,
+		327, 329, 5, 48, 0, 0, 328, 330, 3, 44, 22, 0, 329, 328, 1, 0, 0, 0, 329,
+		330, 1, 0, 0, 0, 330, 331, 1, 0, 0, 0, 331, 332, 5, 49, 0, 0, 332, 59,
+		1, 0, 0, 0, 333, 334, 7, 2, 0, 0, 334, 61, 1, 0, 0, 0, 335, 336, 7, 3,
+		0, 0, 336, 63, 1, 0, 0, 0, 337, 338, 7, 4, 0, 0, 338, 65, 1, 0, 0, 0, 339,
+		340, 7, 5, 0, 0, 340, 67, 1, 0, 0, 0, 341, 342, 7, 6, 0, 0, 342, 69, 1,
+		0, 0, 0, 343, 344, 7, 7, 0, 0, 344, 71, 1, 0, 0, 0, 345, 346, 5, 37, 0,
+		0, 346, 73, 1, 0, 0, 0, 347, 348, 5, 36, 0, 0, 348, 75, 1, 0, 0, 0, 349,
+		350, 3, 60, 30, 0, 350, 354, 5, 43, 0, 0, 351, 355, 3, 46, 23, 0, 352,
+		355, 3, 50, 25, 0, 353, 355, 3, 60, 30, 0, 354, 351, 1, 0, 0, 0, 354, 352,
+		1, 0, 0, 0, 354, 353, 1, 0, 0, 0, 355, 356, 1, 0, 0, 0, 356, 357, 5, 44,
+		0, 0, 357, 77, 1, 0, 0, 0, 358, 359, 5, 2, 0, 0, 359, 79, 1, 0, 0, 0, 360,
+		361, 5, 3, 0, 0, 361, 81, 1, 0, 0, 0, 362, 363, 5, 4, 0, 0, 363, 83, 1,
+		0, 0, 0, 364, 365, 5, 5, 0, 0, 365, 85, 1, 0, 0, 0, 32, 89, 94, 97, 115,
+		119, 131, 139, 141, 149, 153, 159, 169, 171, 180, 190, 192, 201, 205, 210,
+		214, 224, 228, 272, 281, 291, 295, 299, 304, 315, 322, 329, 354,
+	}
+	deserializer := antlr.NewATNDeserializer(nil)
+	staticData.atn = deserializer.Deserialize(staticData.serializedATN)
+	atn := staticData.atn
+	staticData.decisionToDFA = make([]*antlr.DFA, len(atn.DecisionToState))
+	decisionToDFA := staticData.decisionToDFA
+	for index, state := range atn.DecisionToState {
+		decisionToDFA[index] = antlr.NewDFA(state, index)
+	}
+}
+
+// gengineParserInit initializes any static state used to implement gengineParser. By default the
+// static state used to implement the parser is lazily initialized during the first call to
+// NewgengineParser(). You can call this function if you wish to initialize the static state ahead
+// of time.
+func GengineParserInit() {
+	staticData := &gengineParserStaticData
+	staticData.once.Do(gengineParserInit)
+}
+
+// NewgengineParser produces a new parser instance for the optional input antlr.TokenStream.
+func NewgengineParser(input antlr.TokenStream) *gengineParser {
+	GengineParserInit()
+	this := new(gengineParser)
+	this.BaseParser = antlr.NewBaseParser(input)
+	staticData := &gengineParserStaticData
+	this.Interpreter = antlr.NewParserATNSimulator(this, staticData.atn, staticData.decisionToDFA, staticData.predictionContextCache)
+	this.RuleNames = staticData.ruleNames
+	this.LiteralNames = staticData.literalNames
+	this.SymbolicNames = staticData.symbolicNames
+	this.GrammarFileName = "java-escape"
 
 	return this
 }
@@ -293,11 +312,12 @@ const (
 	gengineParserRR_BRACKET       = 49
 	gengineParserDOT              = 50
 	gengineParserDQUOTA_STRING    = 51
-	gengineParserDOTTEDNAME       = 52
-	gengineParserDOUBLEDOTTEDNAME = 53
-	gengineParserREAL_LITERAL     = 54
-	gengineParserSL_COMMENT       = 55
-	gengineParserWS               = 56
+	gengineParserBACKQUOTA_STRING = 52
+	gengineParserDOTTEDNAME       = 53
+	gengineParserDOUBLEDOTTEDNAME = 54
+	gengineParserREAL_LITERAL     = 55
+	gengineParserSL_COMMENT       = 56
+	gengineParserWS               = 57
 )
 
 // gengineParser rules.
@@ -386,12 +406,20 @@ func NewPrimaryContext(parser antlr.Parser, parent antlr.ParserRuleContext, invo
 func (s *PrimaryContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *PrimaryContext) AllRuleEntity() []IRuleEntityContext {
-	var ts = s.GetTypedRuleContexts(reflect.TypeOf((*IRuleEntityContext)(nil)).Elem())
-	var tst = make([]IRuleEntityContext, len(ts))
+	children := s.GetChildren()
+	len := 0
+	for _, ctx := range children {
+		if _, ok := ctx.(IRuleEntityContext); ok {
+			len++
+		}
+	}
 
-	for i, t := range ts {
-		if t != nil {
+	tst := make([]IRuleEntityContext, len)
+	i := 0
+	for _, ctx := range children {
+		if t, ok := ctx.(IRuleEntityContext); ok {
 			tst[i] = t.(IRuleEntityContext)
+			i++
 		}
 	}
 
@@ -399,7 +427,17 @@ func (s *PrimaryContext) AllRuleEntity() []IRuleEntityContext {
 }
 
 func (s *PrimaryContext) RuleEntity(i int) IRuleEntityContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IRuleEntityContext)(nil)).Elem(), i)
+	var t antlr.RuleContext
+	j := 0
+	for _, ctx := range s.GetChildren() {
+		if _, ok := ctx.(IRuleEntityContext); ok {
+			if j == i {
+				t = ctx.(antlr.RuleContext)
+				break
+			}
+			j++
+		}
+	}
 
 	if t == nil {
 		return nil
@@ -428,7 +466,20 @@ func (s *PrimaryContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *PrimaryContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case gengineVisitor:
+		return t.VisitPrimary(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 func (p *gengineParser) Primary() (localctx IPrimaryContext) {
+	this := p
+	_ = this
+
 	localctx = NewPrimaryContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, gengineParserRULE_primary)
 	var _la int
@@ -511,7 +562,13 @@ func (s *RuleEntityContext) RULE() antlr.TerminalNode {
 }
 
 func (s *RuleEntityContext) RuleName() IRuleNameContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IRuleNameContext)(nil)).Elem(), 0)
+	var t antlr.RuleContext
+	for _, ctx := range s.GetChildren() {
+		if _, ok := ctx.(IRuleNameContext); ok {
+			t = ctx.(antlr.RuleContext)
+			break
+		}
+	}
 
 	if t == nil {
 		return nil
@@ -525,7 +582,13 @@ func (s *RuleEntityContext) BEGIN() antlr.TerminalNode {
 }
 
 func (s *RuleEntityContext) RuleContent() IRuleContentContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IRuleContentContext)(nil)).Elem(), 0)
+	var t antlr.RuleContext
+	for _, ctx := range s.GetChildren() {
+		if _, ok := ctx.(IRuleContentContext); ok {
+			t = ctx.(antlr.RuleContext)
+			break
+		}
+	}
 
 	if t == nil {
 		return nil
@@ -539,7 +602,13 @@ func (s *RuleEntityContext) END() antlr.TerminalNode {
 }
 
 func (s *RuleEntityContext) RuleDescription() IRuleDescriptionContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IRuleDescriptionContext)(nil)).Elem(), 0)
+	var t antlr.RuleContext
+	for _, ctx := range s.GetChildren() {
+		if _, ok := ctx.(IRuleDescriptionContext); ok {
+			t = ctx.(antlr.RuleContext)
+			break
+		}
+	}
 
 	if t == nil {
 		return nil
@@ -549,7 +618,13 @@ func (s *RuleEntityContext) RuleDescription() IRuleDescriptionContext {
 }
 
 func (s *RuleEntityContext) Salience() ISalienceContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*ISalienceContext)(nil)).Elem(), 0)
+	var t antlr.RuleContext
+	for _, ctx := range s.GetChildren() {
+		if _, ok := ctx.(ISalienceContext); ok {
+			t = ctx.(antlr.RuleContext)
+			break
+		}
+	}
 
 	if t == nil {
 		return nil
@@ -578,7 +653,20 @@ func (s *RuleEntityContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *RuleEntityContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case gengineVisitor:
+		return t.VisitRuleEntity(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 func (p *gengineParser) RuleEntity() (localctx IRuleEntityContext) {
+	this := p
+	_ = this
+
 	localctx = NewRuleEntityContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 2, gengineParserRULE_ruleEntity)
 	var _la int
@@ -612,7 +700,7 @@ func (p *gengineParser) RuleEntity() (localctx IRuleEntityContext) {
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	if _la == gengineParserDQUOTA_STRING {
+	if _la == gengineParserDQUOTA_STRING || _la == gengineParserBACKQUOTA_STRING {
 		{
 			p.SetState(93)
 			p.RuleDescription()
@@ -685,7 +773,13 @@ func NewRuleNameContext(parser antlr.Parser, parent antlr.ParserRuleContext, inv
 func (s *RuleNameContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *RuleNameContext) StringLiteral() IStringLiteralContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IStringLiteralContext)(nil)).Elem(), 0)
+	var t antlr.RuleContext
+	for _, ctx := range s.GetChildren() {
+		if _, ok := ctx.(IStringLiteralContext); ok {
+			t = ctx.(antlr.RuleContext)
+			break
+		}
+	}
 
 	if t == nil {
 		return nil
@@ -714,7 +808,20 @@ func (s *RuleNameContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *RuleNameContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case gengineVisitor:
+		return t.VisitRuleName(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 func (p *gengineParser) RuleName() (localctx IRuleNameContext) {
+	this := p
+	_ = this
+
 	localctx = NewRuleNameContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 4, gengineParserRULE_ruleName)
 
@@ -782,7 +889,13 @@ func NewRuleDescriptionContext(parser antlr.Parser, parent antlr.ParserRuleConte
 func (s *RuleDescriptionContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *RuleDescriptionContext) StringLiteral() IStringLiteralContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IStringLiteralContext)(nil)).Elem(), 0)
+	var t antlr.RuleContext
+	for _, ctx := range s.GetChildren() {
+		if _, ok := ctx.(IStringLiteralContext); ok {
+			t = ctx.(antlr.RuleContext)
+			break
+		}
+	}
 
 	if t == nil {
 		return nil
@@ -811,7 +924,20 @@ func (s *RuleDescriptionContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *RuleDescriptionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case gengineVisitor:
+		return t.VisitRuleDescription(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 func (p *gengineParser) RuleDescription() (localctx IRuleDescriptionContext) {
+	this := p
+	_ = this
+
 	localctx = NewRuleDescriptionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 6, gengineParserRULE_ruleDescription)
 
@@ -883,7 +1009,13 @@ func (s *SalienceContext) SALIENCE() antlr.TerminalNode {
 }
 
 func (s *SalienceContext) Integer() IIntegerContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IIntegerContext)(nil)).Elem(), 0)
+	var t antlr.RuleContext
+	for _, ctx := range s.GetChildren() {
+		if _, ok := ctx.(IIntegerContext); ok {
+			t = ctx.(antlr.RuleContext)
+			break
+		}
+	}
 
 	if t == nil {
 		return nil
@@ -912,7 +1044,20 @@ func (s *SalienceContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *SalienceContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case gengineVisitor:
+		return t.VisitSalience(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 func (p *gengineParser) Salience() (localctx ISalienceContext) {
+	this := p
+	_ = this
+
 	localctx = NewSalienceContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 8, gengineParserRULE_salience)
 
@@ -984,7 +1129,13 @@ func NewRuleContentContext(parser antlr.Parser, parent antlr.ParserRuleContext, 
 func (s *RuleContentContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *RuleContentContext) Statements() IStatementsContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IStatementsContext)(nil)).Elem(), 0)
+	var t antlr.RuleContext
+	for _, ctx := range s.GetChildren() {
+		if _, ok := ctx.(IStatementsContext); ok {
+			t = ctx.(antlr.RuleContext)
+			break
+		}
+	}
 
 	if t == nil {
 		return nil
@@ -1013,7 +1164,20 @@ func (s *RuleContentContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *RuleContentContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case gengineVisitor:
+		return t.VisitRuleContent(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 func (p *gengineParser) RuleContent() (localctx IRuleContentContext) {
+	this := p
+	_ = this
+
 	localctx = NewRuleContentContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 10, gengineParserRULE_ruleContent)
 
@@ -1081,12 +1245,20 @@ func NewStatementsContext(parser antlr.Parser, parent antlr.ParserRuleContext, i
 func (s *StatementsContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *StatementsContext) AllStatement() []IStatementContext {
-	var ts = s.GetTypedRuleContexts(reflect.TypeOf((*IStatementContext)(nil)).Elem())
-	var tst = make([]IStatementContext, len(ts))
+	children := s.GetChildren()
+	len := 0
+	for _, ctx := range children {
+		if _, ok := ctx.(IStatementContext); ok {
+			len++
+		}
+	}
 
-	for i, t := range ts {
-		if t != nil {
+	tst := make([]IStatementContext, len)
+	i := 0
+	for _, ctx := range children {
+		if t, ok := ctx.(IStatementContext); ok {
 			tst[i] = t.(IStatementContext)
+			i++
 		}
 	}
 
@@ -1094,7 +1266,17 @@ func (s *StatementsContext) AllStatement() []IStatementContext {
 }
 
 func (s *StatementsContext) Statement(i int) IStatementContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IStatementContext)(nil)).Elem(), i)
+	var t antlr.RuleContext
+	j := 0
+	for _, ctx := range s.GetChildren() {
+		if _, ok := ctx.(IStatementContext); ok {
+			if j == i {
+				t = ctx.(antlr.RuleContext)
+				break
+			}
+			j++
+		}
+	}
 
 	if t == nil {
 		return nil
@@ -1104,7 +1286,13 @@ func (s *StatementsContext) Statement(i int) IStatementContext {
 }
 
 func (s *StatementsContext) ReturnStmt() IReturnStmtContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IReturnStmtContext)(nil)).Elem(), 0)
+	var t antlr.RuleContext
+	for _, ctx := range s.GetChildren() {
+		if _, ok := ctx.(IReturnStmtContext); ok {
+			t = ctx.(antlr.RuleContext)
+			break
+		}
+	}
 
 	if t == nil {
 		return nil
@@ -1133,7 +1321,20 @@ func (s *StatementsContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *StatementsContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case gengineVisitor:
+		return t.VisitStatements(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 func (p *gengineParser) Statements() (localctx IStatementsContext) {
+	this := p
+	_ = this
+
 	localctx = NewStatementsContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 12, gengineParserRULE_statements)
 	var _la int
@@ -1159,7 +1360,7 @@ func (p *gengineParser) Statements() (localctx IStatementsContext) {
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	for (((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<gengineParserCONC)|(1<<gengineParserIF)|(1<<gengineParserFOR)|(1<<gengineParserBREAK)|(1<<gengineParserFORRANGE)|(1<<gengineParserCONTINUE)|(1<<gengineParserSIMPLENAME))) != 0) || _la == gengineParserDOTTEDNAME || _la == gengineParserDOUBLEDOTTEDNAME {
+	for (int64(_la) & ^0x3f) == 0 && ((int64(1)<<_la)&27021597781249024) != 0 {
 		{
 			p.SetState(112)
 			p.Statement()
@@ -1223,7 +1424,13 @@ func NewStatementContext(parser antlr.Parser, parent antlr.ParserRuleContext, in
 func (s *StatementContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *StatementContext) IfStmt() IIfStmtContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IIfStmtContext)(nil)).Elem(), 0)
+	var t antlr.RuleContext
+	for _, ctx := range s.GetChildren() {
+		if _, ok := ctx.(IIfStmtContext); ok {
+			t = ctx.(antlr.RuleContext)
+			break
+		}
+	}
 
 	if t == nil {
 		return nil
@@ -1233,7 +1440,13 @@ func (s *StatementContext) IfStmt() IIfStmtContext {
 }
 
 func (s *StatementContext) FunctionCall() IFunctionCallContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IFunctionCallContext)(nil)).Elem(), 0)
+	var t antlr.RuleContext
+	for _, ctx := range s.GetChildren() {
+		if _, ok := ctx.(IFunctionCallContext); ok {
+			t = ctx.(antlr.RuleContext)
+			break
+		}
+	}
 
 	if t == nil {
 		return nil
@@ -1243,7 +1456,13 @@ func (s *StatementContext) FunctionCall() IFunctionCallContext {
 }
 
 func (s *StatementContext) MethodCall() IMethodCallContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IMethodCallContext)(nil)).Elem(), 0)
+	var t antlr.RuleContext
+	for _, ctx := range s.GetChildren() {
+		if _, ok := ctx.(IMethodCallContext); ok {
+			t = ctx.(antlr.RuleContext)
+			break
+		}
+	}
 
 	if t == nil {
 		return nil
@@ -1253,7 +1472,13 @@ func (s *StatementContext) MethodCall() IMethodCallContext {
 }
 
 func (s *StatementContext) ThreeLevelCall() IThreeLevelCallContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IThreeLevelCallContext)(nil)).Elem(), 0)
+	var t antlr.RuleContext
+	for _, ctx := range s.GetChildren() {
+		if _, ok := ctx.(IThreeLevelCallContext); ok {
+			t = ctx.(antlr.RuleContext)
+			break
+		}
+	}
 
 	if t == nil {
 		return nil
@@ -1263,7 +1488,13 @@ func (s *StatementContext) ThreeLevelCall() IThreeLevelCallContext {
 }
 
 func (s *StatementContext) Assignment() IAssignmentContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IAssignmentContext)(nil)).Elem(), 0)
+	var t antlr.RuleContext
+	for _, ctx := range s.GetChildren() {
+		if _, ok := ctx.(IAssignmentContext); ok {
+			t = ctx.(antlr.RuleContext)
+			break
+		}
+	}
 
 	if t == nil {
 		return nil
@@ -1273,7 +1504,13 @@ func (s *StatementContext) Assignment() IAssignmentContext {
 }
 
 func (s *StatementContext) ConcStatement() IConcStatementContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IConcStatementContext)(nil)).Elem(), 0)
+	var t antlr.RuleContext
+	for _, ctx := range s.GetChildren() {
+		if _, ok := ctx.(IConcStatementContext); ok {
+			t = ctx.(antlr.RuleContext)
+			break
+		}
+	}
 
 	if t == nil {
 		return nil
@@ -1283,7 +1520,13 @@ func (s *StatementContext) ConcStatement() IConcStatementContext {
 }
 
 func (s *StatementContext) ForStmt() IForStmtContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IForStmtContext)(nil)).Elem(), 0)
+	var t antlr.RuleContext
+	for _, ctx := range s.GetChildren() {
+		if _, ok := ctx.(IForStmtContext); ok {
+			t = ctx.(antlr.RuleContext)
+			break
+		}
+	}
 
 	if t == nil {
 		return nil
@@ -1293,7 +1536,13 @@ func (s *StatementContext) ForStmt() IForStmtContext {
 }
 
 func (s *StatementContext) BreakStmt() IBreakStmtContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IBreakStmtContext)(nil)).Elem(), 0)
+	var t antlr.RuleContext
+	for _, ctx := range s.GetChildren() {
+		if _, ok := ctx.(IBreakStmtContext); ok {
+			t = ctx.(antlr.RuleContext)
+			break
+		}
+	}
 
 	if t == nil {
 		return nil
@@ -1303,7 +1552,13 @@ func (s *StatementContext) BreakStmt() IBreakStmtContext {
 }
 
 func (s *StatementContext) ForRangeStmt() IForRangeStmtContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IForRangeStmtContext)(nil)).Elem(), 0)
+	var t antlr.RuleContext
+	for _, ctx := range s.GetChildren() {
+		if _, ok := ctx.(IForRangeStmtContext); ok {
+			t = ctx.(antlr.RuleContext)
+			break
+		}
+	}
 
 	if t == nil {
 		return nil
@@ -1313,7 +1568,13 @@ func (s *StatementContext) ForRangeStmt() IForRangeStmtContext {
 }
 
 func (s *StatementContext) ContinueStmt() IContinueStmtContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IContinueStmtContext)(nil)).Elem(), 0)
+	var t antlr.RuleContext
+	for _, ctx := range s.GetChildren() {
+		if _, ok := ctx.(IContinueStmtContext); ok {
+			t = ctx.(antlr.RuleContext)
+			break
+		}
+	}
 
 	if t == nil {
 		return nil
@@ -1342,7 +1603,20 @@ func (s *StatementContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *StatementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case gengineVisitor:
+		return t.VisitStatement(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 func (p *gengineParser) Statement() (localctx IStatementContext) {
+	this := p
+	_ = this
+
 	localctx = NewStatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 14, gengineParserRULE_statement)
 
@@ -1491,12 +1765,20 @@ func (s *ConcStatementContext) RR_BRACE() antlr.TerminalNode {
 }
 
 func (s *ConcStatementContext) AllFunctionCall() []IFunctionCallContext {
-	var ts = s.GetTypedRuleContexts(reflect.TypeOf((*IFunctionCallContext)(nil)).Elem())
-	var tst = make([]IFunctionCallContext, len(ts))
+	children := s.GetChildren()
+	len := 0
+	for _, ctx := range children {
+		if _, ok := ctx.(IFunctionCallContext); ok {
+			len++
+		}
+	}
 
-	for i, t := range ts {
-		if t != nil {
+	tst := make([]IFunctionCallContext, len)
+	i := 0
+	for _, ctx := range children {
+		if t, ok := ctx.(IFunctionCallContext); ok {
 			tst[i] = t.(IFunctionCallContext)
+			i++
 		}
 	}
 
@@ -1504,7 +1786,17 @@ func (s *ConcStatementContext) AllFunctionCall() []IFunctionCallContext {
 }
 
 func (s *ConcStatementContext) FunctionCall(i int) IFunctionCallContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IFunctionCallContext)(nil)).Elem(), i)
+	var t antlr.RuleContext
+	j := 0
+	for _, ctx := range s.GetChildren() {
+		if _, ok := ctx.(IFunctionCallContext); ok {
+			if j == i {
+				t = ctx.(antlr.RuleContext)
+				break
+			}
+			j++
+		}
+	}
 
 	if t == nil {
 		return nil
@@ -1514,12 +1806,20 @@ func (s *ConcStatementContext) FunctionCall(i int) IFunctionCallContext {
 }
 
 func (s *ConcStatementContext) AllMethodCall() []IMethodCallContext {
-	var ts = s.GetTypedRuleContexts(reflect.TypeOf((*IMethodCallContext)(nil)).Elem())
-	var tst = make([]IMethodCallContext, len(ts))
+	children := s.GetChildren()
+	len := 0
+	for _, ctx := range children {
+		if _, ok := ctx.(IMethodCallContext); ok {
+			len++
+		}
+	}
 
-	for i, t := range ts {
-		if t != nil {
+	tst := make([]IMethodCallContext, len)
+	i := 0
+	for _, ctx := range children {
+		if t, ok := ctx.(IMethodCallContext); ok {
 			tst[i] = t.(IMethodCallContext)
+			i++
 		}
 	}
 
@@ -1527,7 +1827,17 @@ func (s *ConcStatementContext) AllMethodCall() []IMethodCallContext {
 }
 
 func (s *ConcStatementContext) MethodCall(i int) IMethodCallContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IMethodCallContext)(nil)).Elem(), i)
+	var t antlr.RuleContext
+	j := 0
+	for _, ctx := range s.GetChildren() {
+		if _, ok := ctx.(IMethodCallContext); ok {
+			if j == i {
+				t = ctx.(antlr.RuleContext)
+				break
+			}
+			j++
+		}
+	}
 
 	if t == nil {
 		return nil
@@ -1537,12 +1847,20 @@ func (s *ConcStatementContext) MethodCall(i int) IMethodCallContext {
 }
 
 func (s *ConcStatementContext) AllThreeLevelCall() []IThreeLevelCallContext {
-	var ts = s.GetTypedRuleContexts(reflect.TypeOf((*IThreeLevelCallContext)(nil)).Elem())
-	var tst = make([]IThreeLevelCallContext, len(ts))
+	children := s.GetChildren()
+	len := 0
+	for _, ctx := range children {
+		if _, ok := ctx.(IThreeLevelCallContext); ok {
+			len++
+		}
+	}
 
-	for i, t := range ts {
-		if t != nil {
+	tst := make([]IThreeLevelCallContext, len)
+	i := 0
+	for _, ctx := range children {
+		if t, ok := ctx.(IThreeLevelCallContext); ok {
 			tst[i] = t.(IThreeLevelCallContext)
+			i++
 		}
 	}
 
@@ -1550,7 +1868,17 @@ func (s *ConcStatementContext) AllThreeLevelCall() []IThreeLevelCallContext {
 }
 
 func (s *ConcStatementContext) ThreeLevelCall(i int) IThreeLevelCallContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IThreeLevelCallContext)(nil)).Elem(), i)
+	var t antlr.RuleContext
+	j := 0
+	for _, ctx := range s.GetChildren() {
+		if _, ok := ctx.(IThreeLevelCallContext); ok {
+			if j == i {
+				t = ctx.(antlr.RuleContext)
+				break
+			}
+			j++
+		}
+	}
 
 	if t == nil {
 		return nil
@@ -1560,12 +1888,20 @@ func (s *ConcStatementContext) ThreeLevelCall(i int) IThreeLevelCallContext {
 }
 
 func (s *ConcStatementContext) AllAssignment() []IAssignmentContext {
-	var ts = s.GetTypedRuleContexts(reflect.TypeOf((*IAssignmentContext)(nil)).Elem())
-	var tst = make([]IAssignmentContext, len(ts))
+	children := s.GetChildren()
+	len := 0
+	for _, ctx := range children {
+		if _, ok := ctx.(IAssignmentContext); ok {
+			len++
+		}
+	}
 
-	for i, t := range ts {
-		if t != nil {
+	tst := make([]IAssignmentContext, len)
+	i := 0
+	for _, ctx := range children {
+		if t, ok := ctx.(IAssignmentContext); ok {
 			tst[i] = t.(IAssignmentContext)
+			i++
 		}
 	}
 
@@ -1573,7 +1909,17 @@ func (s *ConcStatementContext) AllAssignment() []IAssignmentContext {
 }
 
 func (s *ConcStatementContext) Assignment(i int) IAssignmentContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IAssignmentContext)(nil)).Elem(), i)
+	var t antlr.RuleContext
+	j := 0
+	for _, ctx := range s.GetChildren() {
+		if _, ok := ctx.(IAssignmentContext); ok {
+			if j == i {
+				t = ctx.(antlr.RuleContext)
+				break
+			}
+			j++
+		}
+	}
 
 	if t == nil {
 		return nil
@@ -1602,7 +1948,20 @@ func (s *ConcStatementContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *ConcStatementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case gengineVisitor:
+		return t.VisitConcStatement(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 func (p *gengineParser) ConcStatement() (localctx IConcStatementContext) {
+	this := p
+	_ = this
+
 	localctx = NewConcStatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 16, gengineParserRULE_concStatement)
 	var _la int
@@ -1636,7 +1995,7 @@ func (p *gengineParser) ConcStatement() (localctx IConcStatementContext) {
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	for ((_la-24)&-(0x1f+1)) == 0 && ((1<<uint((_la-24)))&((1<<(gengineParserSIMPLENAME-24))|(1<<(gengineParserDOTTEDNAME-24))|(1<<(gengineParserDOUBLEDOTTEDNAME-24)))) != 0 {
+	for (int64(_la) & ^0x3f) == 0 && ((int64(1)<<_la)&27021597781000192) != 0 {
 		p.SetState(139)
 		p.GetErrorHandler().Sync(p)
 		switch p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 6, p.GetParserRuleContext()) {
@@ -1717,7 +2076,13 @@ func NewExpressionContext(parser antlr.Parser, parent antlr.ParserRuleContext, i
 func (s *ExpressionContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *ExpressionContext) MathExpression() IMathExpressionContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IMathExpressionContext)(nil)).Elem(), 0)
+	var t antlr.RuleContext
+	for _, ctx := range s.GetChildren() {
+		if _, ok := ctx.(IMathExpressionContext); ok {
+			t = ctx.(antlr.RuleContext)
+			break
+		}
+	}
 
 	if t == nil {
 		return nil
@@ -1727,7 +2092,13 @@ func (s *ExpressionContext) MathExpression() IMathExpressionContext {
 }
 
 func (s *ExpressionContext) ExpressionAtom() IExpressionAtomContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IExpressionAtomContext)(nil)).Elem(), 0)
+	var t antlr.RuleContext
+	for _, ctx := range s.GetChildren() {
+		if _, ok := ctx.(IExpressionAtomContext); ok {
+			t = ctx.(antlr.RuleContext)
+			break
+		}
+	}
 
 	if t == nil {
 		return nil
@@ -1737,7 +2108,13 @@ func (s *ExpressionContext) ExpressionAtom() IExpressionAtomContext {
 }
 
 func (s *ExpressionContext) NotOperator() INotOperatorContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*INotOperatorContext)(nil)).Elem(), 0)
+	var t antlr.RuleContext
+	for _, ctx := range s.GetChildren() {
+		if _, ok := ctx.(INotOperatorContext); ok {
+			t = ctx.(antlr.RuleContext)
+			break
+		}
+	}
 
 	if t == nil {
 		return nil
@@ -1751,12 +2128,20 @@ func (s *ExpressionContext) LR_BRACKET() antlr.TerminalNode {
 }
 
 func (s *ExpressionContext) AllExpression() []IExpressionContext {
-	var ts = s.GetTypedRuleContexts(reflect.TypeOf((*IExpressionContext)(nil)).Elem())
-	var tst = make([]IExpressionContext, len(ts))
+	children := s.GetChildren()
+	len := 0
+	for _, ctx := range children {
+		if _, ok := ctx.(IExpressionContext); ok {
+			len++
+		}
+	}
 
-	for i, t := range ts {
-		if t != nil {
+	tst := make([]IExpressionContext, len)
+	i := 0
+	for _, ctx := range children {
+		if t, ok := ctx.(IExpressionContext); ok {
 			tst[i] = t.(IExpressionContext)
+			i++
 		}
 	}
 
@@ -1764,7 +2149,17 @@ func (s *ExpressionContext) AllExpression() []IExpressionContext {
 }
 
 func (s *ExpressionContext) Expression(i int) IExpressionContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IExpressionContext)(nil)).Elem(), i)
+	var t antlr.RuleContext
+	j := 0
+	for _, ctx := range s.GetChildren() {
+		if _, ok := ctx.(IExpressionContext); ok {
+			if j == i {
+				t = ctx.(antlr.RuleContext)
+				break
+			}
+			j++
+		}
+	}
 
 	if t == nil {
 		return nil
@@ -1778,7 +2173,13 @@ func (s *ExpressionContext) RR_BRACKET() antlr.TerminalNode {
 }
 
 func (s *ExpressionContext) ComparisonOperator() IComparisonOperatorContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IComparisonOperatorContext)(nil)).Elem(), 0)
+	var t antlr.RuleContext
+	for _, ctx := range s.GetChildren() {
+		if _, ok := ctx.(IComparisonOperatorContext); ok {
+			t = ctx.(antlr.RuleContext)
+			break
+		}
+	}
 
 	if t == nil {
 		return nil
@@ -1788,7 +2189,13 @@ func (s *ExpressionContext) ComparisonOperator() IComparisonOperatorContext {
 }
 
 func (s *ExpressionContext) LogicalOperator() ILogicalOperatorContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*ILogicalOperatorContext)(nil)).Elem(), 0)
+	var t antlr.RuleContext
+	for _, ctx := range s.GetChildren() {
+		if _, ok := ctx.(ILogicalOperatorContext); ok {
+			t = ctx.(antlr.RuleContext)
+			break
+		}
+	}
 
 	if t == nil {
 		return nil
@@ -1817,11 +2224,24 @@ func (s *ExpressionContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *ExpressionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case gengineVisitor:
+		return t.VisitExpression(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 func (p *gengineParser) Expression() (localctx IExpressionContext) {
 	return p.expression(0)
 }
 
 func (p *gengineParser) expression(_p int) (localctx IExpressionContext) {
+	this := p
+	_ = this
+
 	var _parentctx antlr.ParserRuleContext = p.GetParserRuleContext()
 	_parentState := p.GetState()
 	localctx = NewExpressionContext(p, p.GetParserRuleContext(), _parentState)
@@ -2000,7 +2420,13 @@ func NewMathExpressionContext(parser antlr.Parser, parent antlr.ParserRuleContex
 func (s *MathExpressionContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *MathExpressionContext) ExpressionAtom() IExpressionAtomContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IExpressionAtomContext)(nil)).Elem(), 0)
+	var t antlr.RuleContext
+	for _, ctx := range s.GetChildren() {
+		if _, ok := ctx.(IExpressionAtomContext); ok {
+			t = ctx.(antlr.RuleContext)
+			break
+		}
+	}
 
 	if t == nil {
 		return nil
@@ -2014,12 +2440,20 @@ func (s *MathExpressionContext) LR_BRACKET() antlr.TerminalNode {
 }
 
 func (s *MathExpressionContext) AllMathExpression() []IMathExpressionContext {
-	var ts = s.GetTypedRuleContexts(reflect.TypeOf((*IMathExpressionContext)(nil)).Elem())
-	var tst = make([]IMathExpressionContext, len(ts))
+	children := s.GetChildren()
+	len := 0
+	for _, ctx := range children {
+		if _, ok := ctx.(IMathExpressionContext); ok {
+			len++
+		}
+	}
 
-	for i, t := range ts {
-		if t != nil {
+	tst := make([]IMathExpressionContext, len)
+	i := 0
+	for _, ctx := range children {
+		if t, ok := ctx.(IMathExpressionContext); ok {
 			tst[i] = t.(IMathExpressionContext)
+			i++
 		}
 	}
 
@@ -2027,7 +2461,17 @@ func (s *MathExpressionContext) AllMathExpression() []IMathExpressionContext {
 }
 
 func (s *MathExpressionContext) MathExpression(i int) IMathExpressionContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IMathExpressionContext)(nil)).Elem(), i)
+	var t antlr.RuleContext
+	j := 0
+	for _, ctx := range s.GetChildren() {
+		if _, ok := ctx.(IMathExpressionContext); ok {
+			if j == i {
+				t = ctx.(antlr.RuleContext)
+				break
+			}
+			j++
+		}
+	}
 
 	if t == nil {
 		return nil
@@ -2041,7 +2485,13 @@ func (s *MathExpressionContext) RR_BRACKET() antlr.TerminalNode {
 }
 
 func (s *MathExpressionContext) MathMdOperator() IMathMdOperatorContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IMathMdOperatorContext)(nil)).Elem(), 0)
+	var t antlr.RuleContext
+	for _, ctx := range s.GetChildren() {
+		if _, ok := ctx.(IMathMdOperatorContext); ok {
+			t = ctx.(antlr.RuleContext)
+			break
+		}
+	}
 
 	if t == nil {
 		return nil
@@ -2051,7 +2501,13 @@ func (s *MathExpressionContext) MathMdOperator() IMathMdOperatorContext {
 }
 
 func (s *MathExpressionContext) MathPmOperator() IMathPmOperatorContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IMathPmOperatorContext)(nil)).Elem(), 0)
+	var t antlr.RuleContext
+	for _, ctx := range s.GetChildren() {
+		if _, ok := ctx.(IMathPmOperatorContext); ok {
+			t = ctx.(antlr.RuleContext)
+			break
+		}
+	}
 
 	if t == nil {
 		return nil
@@ -2080,11 +2536,24 @@ func (s *MathExpressionContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *MathExpressionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case gengineVisitor:
+		return t.VisitMathExpression(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 func (p *gengineParser) MathExpression() (localctx IMathExpressionContext) {
 	return p.mathExpression(0)
 }
 
 func (p *gengineParser) mathExpression(_p int) (localctx IMathExpressionContext) {
+	this := p
+	_ = this
+
 	var _parentctx antlr.ParserRuleContext = p.GetParserRuleContext()
 	_parentState := p.GetState()
 	localctx = NewMathExpressionContext(p, p.GetParserRuleContext(), _parentState)
@@ -2116,7 +2585,7 @@ func (p *gengineParser) mathExpression(_p int) (localctx IMathExpressionContext)
 	p.GetErrorHandler().Sync(p)
 
 	switch p.GetTokenStream().LA(1) {
-	case gengineParserT__1, gengineParserT__2, gengineParserT__3, gengineParserT__4, gengineParserTRUE, gengineParserFALSE, gengineParserSIMPLENAME, gengineParserINT, gengineParserMINUS, gengineParserDQUOTA_STRING, gengineParserDOTTEDNAME, gengineParserDOUBLEDOTTEDNAME, gengineParserREAL_LITERAL:
+	case gengineParserT__1, gengineParserT__2, gengineParserT__3, gengineParserT__4, gengineParserTRUE, gengineParserFALSE, gengineParserSIMPLENAME, gengineParserINT, gengineParserMINUS, gengineParserDQUOTA_STRING, gengineParserBACKQUOTA_STRING, gengineParserDOTTEDNAME, gengineParserDOUBLEDOTTEDNAME, gengineParserREAL_LITERAL:
 		{
 			p.SetState(175)
 			p.ExpressionAtom()
@@ -2237,7 +2706,13 @@ func NewExpressionAtomContext(parser antlr.Parser, parent antlr.ParserRuleContex
 func (s *ExpressionAtomContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *ExpressionAtomContext) FunctionCall() IFunctionCallContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IFunctionCallContext)(nil)).Elem(), 0)
+	var t antlr.RuleContext
+	for _, ctx := range s.GetChildren() {
+		if _, ok := ctx.(IFunctionCallContext); ok {
+			t = ctx.(antlr.RuleContext)
+			break
+		}
+	}
 
 	if t == nil {
 		return nil
@@ -2247,7 +2722,13 @@ func (s *ExpressionAtomContext) FunctionCall() IFunctionCallContext {
 }
 
 func (s *ExpressionAtomContext) MethodCall() IMethodCallContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IMethodCallContext)(nil)).Elem(), 0)
+	var t antlr.RuleContext
+	for _, ctx := range s.GetChildren() {
+		if _, ok := ctx.(IMethodCallContext); ok {
+			t = ctx.(antlr.RuleContext)
+			break
+		}
+	}
 
 	if t == nil {
 		return nil
@@ -2257,7 +2738,13 @@ func (s *ExpressionAtomContext) MethodCall() IMethodCallContext {
 }
 
 func (s *ExpressionAtomContext) ThreeLevelCall() IThreeLevelCallContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IThreeLevelCallContext)(nil)).Elem(), 0)
+	var t antlr.RuleContext
+	for _, ctx := range s.GetChildren() {
+		if _, ok := ctx.(IThreeLevelCallContext); ok {
+			t = ctx.(antlr.RuleContext)
+			break
+		}
+	}
 
 	if t == nil {
 		return nil
@@ -2267,7 +2754,13 @@ func (s *ExpressionAtomContext) ThreeLevelCall() IThreeLevelCallContext {
 }
 
 func (s *ExpressionAtomContext) Constant() IConstantContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IConstantContext)(nil)).Elem(), 0)
+	var t antlr.RuleContext
+	for _, ctx := range s.GetChildren() {
+		if _, ok := ctx.(IConstantContext); ok {
+			t = ctx.(antlr.RuleContext)
+			break
+		}
+	}
 
 	if t == nil {
 		return nil
@@ -2277,7 +2770,13 @@ func (s *ExpressionAtomContext) Constant() IConstantContext {
 }
 
 func (s *ExpressionAtomContext) MapVar() IMapVarContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IMapVarContext)(nil)).Elem(), 0)
+	var t antlr.RuleContext
+	for _, ctx := range s.GetChildren() {
+		if _, ok := ctx.(IMapVarContext); ok {
+			t = ctx.(antlr.RuleContext)
+			break
+		}
+	}
 
 	if t == nil {
 		return nil
@@ -2287,7 +2786,13 @@ func (s *ExpressionAtomContext) MapVar() IMapVarContext {
 }
 
 func (s *ExpressionAtomContext) Variable() IVariableContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IVariableContext)(nil)).Elem(), 0)
+	var t antlr.RuleContext
+	for _, ctx := range s.GetChildren() {
+		if _, ok := ctx.(IVariableContext); ok {
+			t = ctx.(antlr.RuleContext)
+			break
+		}
+	}
 
 	if t == nil {
 		return nil
@@ -2316,7 +2821,20 @@ func (s *ExpressionAtomContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *ExpressionAtomContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case gengineVisitor:
+		return t.VisitExpressionAtom(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 func (p *gengineParser) ExpressionAtom() (localctx IExpressionAtomContext) {
+	this := p
+	_ = this
+
 	localctx = NewExpressionAtomContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 22, gengineParserRULE_expressionAtom)
 
@@ -2425,7 +2943,13 @@ func NewAssignmentContext(parser antlr.Parser, parent antlr.ParserRuleContext, i
 func (s *AssignmentContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *AssignmentContext) AssignOperator() IAssignOperatorContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IAssignOperatorContext)(nil)).Elem(), 0)
+	var t antlr.RuleContext
+	for _, ctx := range s.GetChildren() {
+		if _, ok := ctx.(IAssignOperatorContext); ok {
+			t = ctx.(antlr.RuleContext)
+			break
+		}
+	}
 
 	if t == nil {
 		return nil
@@ -2435,7 +2959,13 @@ func (s *AssignmentContext) AssignOperator() IAssignOperatorContext {
 }
 
 func (s *AssignmentContext) MapVar() IMapVarContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IMapVarContext)(nil)).Elem(), 0)
+	var t antlr.RuleContext
+	for _, ctx := range s.GetChildren() {
+		if _, ok := ctx.(IMapVarContext); ok {
+			t = ctx.(antlr.RuleContext)
+			break
+		}
+	}
 
 	if t == nil {
 		return nil
@@ -2445,7 +2975,13 @@ func (s *AssignmentContext) MapVar() IMapVarContext {
 }
 
 func (s *AssignmentContext) Variable() IVariableContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IVariableContext)(nil)).Elem(), 0)
+	var t antlr.RuleContext
+	for _, ctx := range s.GetChildren() {
+		if _, ok := ctx.(IVariableContext); ok {
+			t = ctx.(antlr.RuleContext)
+			break
+		}
+	}
 
 	if t == nil {
 		return nil
@@ -2455,7 +2991,13 @@ func (s *AssignmentContext) Variable() IVariableContext {
 }
 
 func (s *AssignmentContext) MathExpression() IMathExpressionContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IMathExpressionContext)(nil)).Elem(), 0)
+	var t antlr.RuleContext
+	for _, ctx := range s.GetChildren() {
+		if _, ok := ctx.(IMathExpressionContext); ok {
+			t = ctx.(antlr.RuleContext)
+			break
+		}
+	}
 
 	if t == nil {
 		return nil
@@ -2465,7 +3007,13 @@ func (s *AssignmentContext) MathExpression() IMathExpressionContext {
 }
 
 func (s *AssignmentContext) Expression() IExpressionContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IExpressionContext)(nil)).Elem(), 0)
+	var t antlr.RuleContext
+	for _, ctx := range s.GetChildren() {
+		if _, ok := ctx.(IExpressionContext); ok {
+			t = ctx.(antlr.RuleContext)
+			break
+		}
+	}
 
 	if t == nil {
 		return nil
@@ -2494,7 +3042,20 @@ func (s *AssignmentContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *AssignmentContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case gengineVisitor:
+		return t.VisitAssignment(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 func (p *gengineParser) Assignment() (localctx IAssignmentContext) {
+	this := p
+	_ = this
+
 	localctx = NewAssignmentContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 24, gengineParserRULE_assignment)
 
@@ -2598,7 +3159,13 @@ func (s *ReturnStmtContext) RETURN() antlr.TerminalNode {
 }
 
 func (s *ReturnStmtContext) Expression() IExpressionContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IExpressionContext)(nil)).Elem(), 0)
+	var t antlr.RuleContext
+	for _, ctx := range s.GetChildren() {
+		if _, ok := ctx.(IExpressionContext); ok {
+			t = ctx.(antlr.RuleContext)
+			break
+		}
+	}
 
 	if t == nil {
 		return nil
@@ -2627,7 +3194,20 @@ func (s *ReturnStmtContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *ReturnStmtContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case gengineVisitor:
+		return t.VisitReturnStmt(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 func (p *gengineParser) ReturnStmt() (localctx IReturnStmtContext) {
+	this := p
+	_ = this
+
 	localctx = NewReturnStmtContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 26, gengineParserRULE_returnStmt)
 	var _la int
@@ -2657,7 +3237,7 @@ func (p *gengineParser) ReturnStmt() (localctx IReturnStmtContext) {
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	if (((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<gengineParserT__1)|(1<<gengineParserT__2)|(1<<gengineParserT__3)|(1<<gengineParserT__4)|(1<<gengineParserTRUE)|(1<<gengineParserFALSE)|(1<<gengineParserSIMPLENAME)|(1<<gengineParserINT)|(1<<gengineParserMINUS))) != 0) || (((_la-36)&-(0x1f+1)) == 0 && ((1<<uint((_la-36)))&((1<<(gengineParserNOT-36))|(1<<(gengineParserLR_BRACKET-36))|(1<<(gengineParserDQUOTA_STRING-36))|(1<<(gengineParserDOTTEDNAME-36))|(1<<(gengineParserDOUBLEDOTTEDNAME-36))|(1<<(gengineParserREAL_LITERAL-36)))) != 0) {
+	if (int64(_la) & ^0x3f) == 0 && ((int64(1)<<_la)&70087338105765948) != 0 {
 		{
 			p.SetState(213)
 			p.expression(0)
@@ -2711,7 +3291,13 @@ func (s *IfStmtContext) IF() antlr.TerminalNode {
 }
 
 func (s *IfStmtContext) Expression() IExpressionContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IExpressionContext)(nil)).Elem(), 0)
+	var t antlr.RuleContext
+	for _, ctx := range s.GetChildren() {
+		if _, ok := ctx.(IExpressionContext); ok {
+			t = ctx.(antlr.RuleContext)
+			break
+		}
+	}
 
 	if t == nil {
 		return nil
@@ -2725,7 +3311,13 @@ func (s *IfStmtContext) LR_BRACE() antlr.TerminalNode {
 }
 
 func (s *IfStmtContext) Statements() IStatementsContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IStatementsContext)(nil)).Elem(), 0)
+	var t antlr.RuleContext
+	for _, ctx := range s.GetChildren() {
+		if _, ok := ctx.(IStatementsContext); ok {
+			t = ctx.(antlr.RuleContext)
+			break
+		}
+	}
 
 	if t == nil {
 		return nil
@@ -2739,12 +3331,20 @@ func (s *IfStmtContext) RR_BRACE() antlr.TerminalNode {
 }
 
 func (s *IfStmtContext) AllElseIfStmt() []IElseIfStmtContext {
-	var ts = s.GetTypedRuleContexts(reflect.TypeOf((*IElseIfStmtContext)(nil)).Elem())
-	var tst = make([]IElseIfStmtContext, len(ts))
+	children := s.GetChildren()
+	len := 0
+	for _, ctx := range children {
+		if _, ok := ctx.(IElseIfStmtContext); ok {
+			len++
+		}
+	}
 
-	for i, t := range ts {
-		if t != nil {
+	tst := make([]IElseIfStmtContext, len)
+	i := 0
+	for _, ctx := range children {
+		if t, ok := ctx.(IElseIfStmtContext); ok {
 			tst[i] = t.(IElseIfStmtContext)
+			i++
 		}
 	}
 
@@ -2752,7 +3352,17 @@ func (s *IfStmtContext) AllElseIfStmt() []IElseIfStmtContext {
 }
 
 func (s *IfStmtContext) ElseIfStmt(i int) IElseIfStmtContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IElseIfStmtContext)(nil)).Elem(), i)
+	var t antlr.RuleContext
+	j := 0
+	for _, ctx := range s.GetChildren() {
+		if _, ok := ctx.(IElseIfStmtContext); ok {
+			if j == i {
+				t = ctx.(antlr.RuleContext)
+				break
+			}
+			j++
+		}
+	}
 
 	if t == nil {
 		return nil
@@ -2762,7 +3372,13 @@ func (s *IfStmtContext) ElseIfStmt(i int) IElseIfStmtContext {
 }
 
 func (s *IfStmtContext) ElseStmt() IElseStmtContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IElseStmtContext)(nil)).Elem(), 0)
+	var t antlr.RuleContext
+	for _, ctx := range s.GetChildren() {
+		if _, ok := ctx.(IElseStmtContext); ok {
+			t = ctx.(antlr.RuleContext)
+			break
+		}
+	}
 
 	if t == nil {
 		return nil
@@ -2791,7 +3407,20 @@ func (s *IfStmtContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *IfStmtContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case gengineVisitor:
+		return t.VisitIfStmt(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 func (p *gengineParser) IfStmt() (localctx IIfStmtContext) {
+	this := p
+	_ = this
+
 	localctx = NewIfStmtContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 28, gengineParserRULE_ifStmt)
 	var _la int
@@ -2913,7 +3542,13 @@ func (s *ElseIfStmtContext) IF() antlr.TerminalNode {
 }
 
 func (s *ElseIfStmtContext) Expression() IExpressionContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IExpressionContext)(nil)).Elem(), 0)
+	var t antlr.RuleContext
+	for _, ctx := range s.GetChildren() {
+		if _, ok := ctx.(IExpressionContext); ok {
+			t = ctx.(antlr.RuleContext)
+			break
+		}
+	}
 
 	if t == nil {
 		return nil
@@ -2927,7 +3562,13 @@ func (s *ElseIfStmtContext) LR_BRACE() antlr.TerminalNode {
 }
 
 func (s *ElseIfStmtContext) Statements() IStatementsContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IStatementsContext)(nil)).Elem(), 0)
+	var t antlr.RuleContext
+	for _, ctx := range s.GetChildren() {
+		if _, ok := ctx.(IStatementsContext); ok {
+			t = ctx.(antlr.RuleContext)
+			break
+		}
+	}
 
 	if t == nil {
 		return nil
@@ -2960,7 +3601,20 @@ func (s *ElseIfStmtContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *ElseIfStmtContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case gengineVisitor:
+		return t.VisitElseIfStmt(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 func (p *gengineParser) ElseIfStmt() (localctx IElseIfStmtContext) {
+	this := p
+	_ = this
+
 	localctx = NewElseIfStmtContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 30, gengineParserRULE_elseIfStmt)
 
@@ -3056,7 +3710,13 @@ func (s *ElseStmtContext) LR_BRACE() antlr.TerminalNode {
 }
 
 func (s *ElseStmtContext) Statements() IStatementsContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IStatementsContext)(nil)).Elem(), 0)
+	var t antlr.RuleContext
+	for _, ctx := range s.GetChildren() {
+		if _, ok := ctx.(IStatementsContext); ok {
+			t = ctx.(antlr.RuleContext)
+			break
+		}
+	}
 
 	if t == nil {
 		return nil
@@ -3089,7 +3749,20 @@ func (s *ElseStmtContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *ElseStmtContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case gengineVisitor:
+		return t.VisitElseStmt(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 func (p *gengineParser) ElseStmt() (localctx IElseStmtContext) {
+	this := p
+	_ = this
+
 	localctx = NewElseStmtContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 32, gengineParserRULE_elseStmt)
 
@@ -3173,12 +3846,20 @@ func (s *ForStmtContext) FOR() antlr.TerminalNode {
 }
 
 func (s *ForStmtContext) AllAssignment() []IAssignmentContext {
-	var ts = s.GetTypedRuleContexts(reflect.TypeOf((*IAssignmentContext)(nil)).Elem())
-	var tst = make([]IAssignmentContext, len(ts))
+	children := s.GetChildren()
+	len := 0
+	for _, ctx := range children {
+		if _, ok := ctx.(IAssignmentContext); ok {
+			len++
+		}
+	}
 
-	for i, t := range ts {
-		if t != nil {
+	tst := make([]IAssignmentContext, len)
+	i := 0
+	for _, ctx := range children {
+		if t, ok := ctx.(IAssignmentContext); ok {
 			tst[i] = t.(IAssignmentContext)
+			i++
 		}
 	}
 
@@ -3186,7 +3867,17 @@ func (s *ForStmtContext) AllAssignment() []IAssignmentContext {
 }
 
 func (s *ForStmtContext) Assignment(i int) IAssignmentContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IAssignmentContext)(nil)).Elem(), i)
+	var t antlr.RuleContext
+	j := 0
+	for _, ctx := range s.GetChildren() {
+		if _, ok := ctx.(IAssignmentContext); ok {
+			if j == i {
+				t = ctx.(antlr.RuleContext)
+				break
+			}
+			j++
+		}
+	}
 
 	if t == nil {
 		return nil
@@ -3204,7 +3895,13 @@ func (s *ForStmtContext) SEMICOLON(i int) antlr.TerminalNode {
 }
 
 func (s *ForStmtContext) Expression() IExpressionContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IExpressionContext)(nil)).Elem(), 0)
+	var t antlr.RuleContext
+	for _, ctx := range s.GetChildren() {
+		if _, ok := ctx.(IExpressionContext); ok {
+			t = ctx.(antlr.RuleContext)
+			break
+		}
+	}
 
 	if t == nil {
 		return nil
@@ -3218,7 +3915,13 @@ func (s *ForStmtContext) LR_BRACE() antlr.TerminalNode {
 }
 
 func (s *ForStmtContext) Statements() IStatementsContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IStatementsContext)(nil)).Elem(), 0)
+	var t antlr.RuleContext
+	for _, ctx := range s.GetChildren() {
+		if _, ok := ctx.(IStatementsContext); ok {
+			t = ctx.(antlr.RuleContext)
+			break
+		}
+	}
 
 	if t == nil {
 		return nil
@@ -3251,7 +3954,20 @@ func (s *ForStmtContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *ForStmtContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case gengineVisitor:
+		return t.VisitForStmt(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 func (p *gengineParser) ForStmt() (localctx IForStmtContext) {
+	this := p
+	_ = this
+
 	localctx = NewForStmtContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 34, gengineParserRULE_forStmt)
 
@@ -3374,7 +4090,20 @@ func (s *BreakStmtContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *BreakStmtContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case gengineVisitor:
+		return t.VisitBreakStmt(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 func (p *gengineParser) BreakStmt() (localctx IBreakStmtContext) {
+	this := p
+	_ = this
+
 	localctx = NewBreakStmtContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 36, gengineParserRULE_breakStmt)
 
@@ -3446,12 +4175,20 @@ func (s *ForRangeStmtContext) FORRANGE() antlr.TerminalNode {
 }
 
 func (s *ForRangeStmtContext) AllVariable() []IVariableContext {
-	var ts = s.GetTypedRuleContexts(reflect.TypeOf((*IVariableContext)(nil)).Elem())
-	var tst = make([]IVariableContext, len(ts))
+	children := s.GetChildren()
+	len := 0
+	for _, ctx := range children {
+		if _, ok := ctx.(IVariableContext); ok {
+			len++
+		}
+	}
 
-	for i, t := range ts {
-		if t != nil {
+	tst := make([]IVariableContext, len)
+	i := 0
+	for _, ctx := range children {
+		if t, ok := ctx.(IVariableContext); ok {
 			tst[i] = t.(IVariableContext)
+			i++
 		}
 	}
 
@@ -3459,7 +4196,17 @@ func (s *ForRangeStmtContext) AllVariable() []IVariableContext {
 }
 
 func (s *ForRangeStmtContext) Variable(i int) IVariableContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IVariableContext)(nil)).Elem(), i)
+	var t antlr.RuleContext
+	j := 0
+	for _, ctx := range s.GetChildren() {
+		if _, ok := ctx.(IVariableContext); ok {
+			if j == i {
+				t = ctx.(antlr.RuleContext)
+				break
+			}
+			j++
+		}
+	}
 
 	if t == nil {
 		return nil
@@ -3469,7 +4216,13 @@ func (s *ForRangeStmtContext) Variable(i int) IVariableContext {
 }
 
 func (s *ForRangeStmtContext) RangeOperator() IRangeOperatorContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IRangeOperatorContext)(nil)).Elem(), 0)
+	var t antlr.RuleContext
+	for _, ctx := range s.GetChildren() {
+		if _, ok := ctx.(IRangeOperatorContext); ok {
+			t = ctx.(antlr.RuleContext)
+			break
+		}
+	}
 
 	if t == nil {
 		return nil
@@ -3483,7 +4236,13 @@ func (s *ForRangeStmtContext) LR_BRACE() antlr.TerminalNode {
 }
 
 func (s *ForRangeStmtContext) Statements() IStatementsContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IStatementsContext)(nil)).Elem(), 0)
+	var t antlr.RuleContext
+	for _, ctx := range s.GetChildren() {
+		if _, ok := ctx.(IStatementsContext); ok {
+			t = ctx.(antlr.RuleContext)
+			break
+		}
+	}
 
 	if t == nil {
 		return nil
@@ -3516,7 +4275,20 @@ func (s *ForRangeStmtContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *ForRangeStmtContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case gengineVisitor:
+		return t.VisitForRangeStmt(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 func (p *gengineParser) ForRangeStmt() (localctx IForRangeStmtContext) {
+	this := p
+	_ = this
+
 	localctx = NewForRangeStmtContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 38, gengineParserRULE_forRangeStmt)
 
@@ -3631,7 +4403,20 @@ func (s *ContinueStmtContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *ContinueStmtContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case gengineVisitor:
+		return t.VisitContinueStmt(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 func (p *gengineParser) ContinueStmt() (localctx IContinueStmtContext) {
+	this := p
+	_ = this
+
 	localctx = NewContinueStmtContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 40, gengineParserRULE_continueStmt)
 
@@ -3699,7 +4484,13 @@ func NewConstantContext(parser antlr.Parser, parent antlr.ParserRuleContext, inv
 func (s *ConstantContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *ConstantContext) BooleanLiteral() IBooleanLiteralContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IBooleanLiteralContext)(nil)).Elem(), 0)
+	var t antlr.RuleContext
+	for _, ctx := range s.GetChildren() {
+		if _, ok := ctx.(IBooleanLiteralContext); ok {
+			t = ctx.(antlr.RuleContext)
+			break
+		}
+	}
 
 	if t == nil {
 		return nil
@@ -3709,7 +4500,13 @@ func (s *ConstantContext) BooleanLiteral() IBooleanLiteralContext {
 }
 
 func (s *ConstantContext) Integer() IIntegerContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IIntegerContext)(nil)).Elem(), 0)
+	var t antlr.RuleContext
+	for _, ctx := range s.GetChildren() {
+		if _, ok := ctx.(IIntegerContext); ok {
+			t = ctx.(antlr.RuleContext)
+			break
+		}
+	}
 
 	if t == nil {
 		return nil
@@ -3719,7 +4516,13 @@ func (s *ConstantContext) Integer() IIntegerContext {
 }
 
 func (s *ConstantContext) RealLiteral() IRealLiteralContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IRealLiteralContext)(nil)).Elem(), 0)
+	var t antlr.RuleContext
+	for _, ctx := range s.GetChildren() {
+		if _, ok := ctx.(IRealLiteralContext); ok {
+			t = ctx.(antlr.RuleContext)
+			break
+		}
+	}
 
 	if t == nil {
 		return nil
@@ -3729,7 +4532,13 @@ func (s *ConstantContext) RealLiteral() IRealLiteralContext {
 }
 
 func (s *ConstantContext) StringLiteral() IStringLiteralContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IStringLiteralContext)(nil)).Elem(), 0)
+	var t antlr.RuleContext
+	for _, ctx := range s.GetChildren() {
+		if _, ok := ctx.(IStringLiteralContext); ok {
+			t = ctx.(antlr.RuleContext)
+			break
+		}
+	}
 
 	if t == nil {
 		return nil
@@ -3739,7 +4548,13 @@ func (s *ConstantContext) StringLiteral() IStringLiteralContext {
 }
 
 func (s *ConstantContext) AtName() IAtNameContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IAtNameContext)(nil)).Elem(), 0)
+	var t antlr.RuleContext
+	for _, ctx := range s.GetChildren() {
+		if _, ok := ctx.(IAtNameContext); ok {
+			t = ctx.(antlr.RuleContext)
+			break
+		}
+	}
 
 	if t == nil {
 		return nil
@@ -3749,7 +4564,13 @@ func (s *ConstantContext) AtName() IAtNameContext {
 }
 
 func (s *ConstantContext) AtId() IAtIdContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IAtIdContext)(nil)).Elem(), 0)
+	var t antlr.RuleContext
+	for _, ctx := range s.GetChildren() {
+		if _, ok := ctx.(IAtIdContext); ok {
+			t = ctx.(antlr.RuleContext)
+			break
+		}
+	}
 
 	if t == nil {
 		return nil
@@ -3759,7 +4580,13 @@ func (s *ConstantContext) AtId() IAtIdContext {
 }
 
 func (s *ConstantContext) AtDesc() IAtDescContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IAtDescContext)(nil)).Elem(), 0)
+	var t antlr.RuleContext
+	for _, ctx := range s.GetChildren() {
+		if _, ok := ctx.(IAtDescContext); ok {
+			t = ctx.(antlr.RuleContext)
+			break
+		}
+	}
 
 	if t == nil {
 		return nil
@@ -3769,7 +4596,13 @@ func (s *ConstantContext) AtDesc() IAtDescContext {
 }
 
 func (s *ConstantContext) AtSal() IAtSalContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IAtSalContext)(nil)).Elem(), 0)
+	var t antlr.RuleContext
+	for _, ctx := range s.GetChildren() {
+		if _, ok := ctx.(IAtSalContext); ok {
+			t = ctx.(antlr.RuleContext)
+			break
+		}
+	}
 
 	if t == nil {
 		return nil
@@ -3798,7 +4631,20 @@ func (s *ConstantContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *ConstantContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case gengineVisitor:
+		return t.VisitConstant(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 func (p *gengineParser) Constant() (localctx IConstantContext) {
+	this := p
+	_ = this
+
 	localctx = NewConstantContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 42, gengineParserRULE_constant)
 
@@ -3921,12 +4767,20 @@ func NewFunctionArgsContext(parser antlr.Parser, parent antlr.ParserRuleContext,
 func (s *FunctionArgsContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *FunctionArgsContext) AllConstant() []IConstantContext {
-	var ts = s.GetTypedRuleContexts(reflect.TypeOf((*IConstantContext)(nil)).Elem())
-	var tst = make([]IConstantContext, len(ts))
+	children := s.GetChildren()
+	len := 0
+	for _, ctx := range children {
+		if _, ok := ctx.(IConstantContext); ok {
+			len++
+		}
+	}
 
-	for i, t := range ts {
-		if t != nil {
+	tst := make([]IConstantContext, len)
+	i := 0
+	for _, ctx := range children {
+		if t, ok := ctx.(IConstantContext); ok {
 			tst[i] = t.(IConstantContext)
+			i++
 		}
 	}
 
@@ -3934,7 +4788,17 @@ func (s *FunctionArgsContext) AllConstant() []IConstantContext {
 }
 
 func (s *FunctionArgsContext) Constant(i int) IConstantContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IConstantContext)(nil)).Elem(), i)
+	var t antlr.RuleContext
+	j := 0
+	for _, ctx := range s.GetChildren() {
+		if _, ok := ctx.(IConstantContext); ok {
+			if j == i {
+				t = ctx.(antlr.RuleContext)
+				break
+			}
+			j++
+		}
+	}
 
 	if t == nil {
 		return nil
@@ -3944,12 +4808,20 @@ func (s *FunctionArgsContext) Constant(i int) IConstantContext {
 }
 
 func (s *FunctionArgsContext) AllVariable() []IVariableContext {
-	var ts = s.GetTypedRuleContexts(reflect.TypeOf((*IVariableContext)(nil)).Elem())
-	var tst = make([]IVariableContext, len(ts))
+	children := s.GetChildren()
+	len := 0
+	for _, ctx := range children {
+		if _, ok := ctx.(IVariableContext); ok {
+			len++
+		}
+	}
 
-	for i, t := range ts {
-		if t != nil {
+	tst := make([]IVariableContext, len)
+	i := 0
+	for _, ctx := range children {
+		if t, ok := ctx.(IVariableContext); ok {
 			tst[i] = t.(IVariableContext)
+			i++
 		}
 	}
 
@@ -3957,7 +4829,17 @@ func (s *FunctionArgsContext) AllVariable() []IVariableContext {
 }
 
 func (s *FunctionArgsContext) Variable(i int) IVariableContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IVariableContext)(nil)).Elem(), i)
+	var t antlr.RuleContext
+	j := 0
+	for _, ctx := range s.GetChildren() {
+		if _, ok := ctx.(IVariableContext); ok {
+			if j == i {
+				t = ctx.(antlr.RuleContext)
+				break
+			}
+			j++
+		}
+	}
 
 	if t == nil {
 		return nil
@@ -3967,12 +4849,20 @@ func (s *FunctionArgsContext) Variable(i int) IVariableContext {
 }
 
 func (s *FunctionArgsContext) AllFunctionCall() []IFunctionCallContext {
-	var ts = s.GetTypedRuleContexts(reflect.TypeOf((*IFunctionCallContext)(nil)).Elem())
-	var tst = make([]IFunctionCallContext, len(ts))
+	children := s.GetChildren()
+	len := 0
+	for _, ctx := range children {
+		if _, ok := ctx.(IFunctionCallContext); ok {
+			len++
+		}
+	}
 
-	for i, t := range ts {
-		if t != nil {
+	tst := make([]IFunctionCallContext, len)
+	i := 0
+	for _, ctx := range children {
+		if t, ok := ctx.(IFunctionCallContext); ok {
 			tst[i] = t.(IFunctionCallContext)
+			i++
 		}
 	}
 
@@ -3980,7 +4870,17 @@ func (s *FunctionArgsContext) AllFunctionCall() []IFunctionCallContext {
 }
 
 func (s *FunctionArgsContext) FunctionCall(i int) IFunctionCallContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IFunctionCallContext)(nil)).Elem(), i)
+	var t antlr.RuleContext
+	j := 0
+	for _, ctx := range s.GetChildren() {
+		if _, ok := ctx.(IFunctionCallContext); ok {
+			if j == i {
+				t = ctx.(antlr.RuleContext)
+				break
+			}
+			j++
+		}
+	}
 
 	if t == nil {
 		return nil
@@ -3990,12 +4890,20 @@ func (s *FunctionArgsContext) FunctionCall(i int) IFunctionCallContext {
 }
 
 func (s *FunctionArgsContext) AllMethodCall() []IMethodCallContext {
-	var ts = s.GetTypedRuleContexts(reflect.TypeOf((*IMethodCallContext)(nil)).Elem())
-	var tst = make([]IMethodCallContext, len(ts))
+	children := s.GetChildren()
+	len := 0
+	for _, ctx := range children {
+		if _, ok := ctx.(IMethodCallContext); ok {
+			len++
+		}
+	}
 
-	for i, t := range ts {
-		if t != nil {
+	tst := make([]IMethodCallContext, len)
+	i := 0
+	for _, ctx := range children {
+		if t, ok := ctx.(IMethodCallContext); ok {
 			tst[i] = t.(IMethodCallContext)
+			i++
 		}
 	}
 
@@ -4003,7 +4911,17 @@ func (s *FunctionArgsContext) AllMethodCall() []IMethodCallContext {
 }
 
 func (s *FunctionArgsContext) MethodCall(i int) IMethodCallContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IMethodCallContext)(nil)).Elem(), i)
+	var t antlr.RuleContext
+	j := 0
+	for _, ctx := range s.GetChildren() {
+		if _, ok := ctx.(IMethodCallContext); ok {
+			if j == i {
+				t = ctx.(antlr.RuleContext)
+				break
+			}
+			j++
+		}
+	}
 
 	if t == nil {
 		return nil
@@ -4013,12 +4931,20 @@ func (s *FunctionArgsContext) MethodCall(i int) IMethodCallContext {
 }
 
 func (s *FunctionArgsContext) AllThreeLevelCall() []IThreeLevelCallContext {
-	var ts = s.GetTypedRuleContexts(reflect.TypeOf((*IThreeLevelCallContext)(nil)).Elem())
-	var tst = make([]IThreeLevelCallContext, len(ts))
+	children := s.GetChildren()
+	len := 0
+	for _, ctx := range children {
+		if _, ok := ctx.(IThreeLevelCallContext); ok {
+			len++
+		}
+	}
 
-	for i, t := range ts {
-		if t != nil {
+	tst := make([]IThreeLevelCallContext, len)
+	i := 0
+	for _, ctx := range children {
+		if t, ok := ctx.(IThreeLevelCallContext); ok {
 			tst[i] = t.(IThreeLevelCallContext)
+			i++
 		}
 	}
 
@@ -4026,7 +4952,17 @@ func (s *FunctionArgsContext) AllThreeLevelCall() []IThreeLevelCallContext {
 }
 
 func (s *FunctionArgsContext) ThreeLevelCall(i int) IThreeLevelCallContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IThreeLevelCallContext)(nil)).Elem(), i)
+	var t antlr.RuleContext
+	j := 0
+	for _, ctx := range s.GetChildren() {
+		if _, ok := ctx.(IThreeLevelCallContext); ok {
+			if j == i {
+				t = ctx.(antlr.RuleContext)
+				break
+			}
+			j++
+		}
+	}
 
 	if t == nil {
 		return nil
@@ -4036,12 +4972,20 @@ func (s *FunctionArgsContext) ThreeLevelCall(i int) IThreeLevelCallContext {
 }
 
 func (s *FunctionArgsContext) AllMapVar() []IMapVarContext {
-	var ts = s.GetTypedRuleContexts(reflect.TypeOf((*IMapVarContext)(nil)).Elem())
-	var tst = make([]IMapVarContext, len(ts))
+	children := s.GetChildren()
+	len := 0
+	for _, ctx := range children {
+		if _, ok := ctx.(IMapVarContext); ok {
+			len++
+		}
+	}
 
-	for i, t := range ts {
-		if t != nil {
+	tst := make([]IMapVarContext, len)
+	i := 0
+	for _, ctx := range children {
+		if t, ok := ctx.(IMapVarContext); ok {
 			tst[i] = t.(IMapVarContext)
+			i++
 		}
 	}
 
@@ -4049,7 +4993,17 @@ func (s *FunctionArgsContext) AllMapVar() []IMapVarContext {
 }
 
 func (s *FunctionArgsContext) MapVar(i int) IMapVarContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IMapVarContext)(nil)).Elem(), i)
+	var t antlr.RuleContext
+	j := 0
+	for _, ctx := range s.GetChildren() {
+		if _, ok := ctx.(IMapVarContext); ok {
+			if j == i {
+				t = ctx.(antlr.RuleContext)
+				break
+			}
+			j++
+		}
+	}
 
 	if t == nil {
 		return nil
@@ -4059,12 +5013,20 @@ func (s *FunctionArgsContext) MapVar(i int) IMapVarContext {
 }
 
 func (s *FunctionArgsContext) AllExpression() []IExpressionContext {
-	var ts = s.GetTypedRuleContexts(reflect.TypeOf((*IExpressionContext)(nil)).Elem())
-	var tst = make([]IExpressionContext, len(ts))
+	children := s.GetChildren()
+	len := 0
+	for _, ctx := range children {
+		if _, ok := ctx.(IExpressionContext); ok {
+			len++
+		}
+	}
 
-	for i, t := range ts {
-		if t != nil {
+	tst := make([]IExpressionContext, len)
+	i := 0
+	for _, ctx := range children {
+		if t, ok := ctx.(IExpressionContext); ok {
 			tst[i] = t.(IExpressionContext)
+			i++
 		}
 	}
 
@@ -4072,7 +5034,17 @@ func (s *FunctionArgsContext) AllExpression() []IExpressionContext {
 }
 
 func (s *FunctionArgsContext) Expression(i int) IExpressionContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IExpressionContext)(nil)).Elem(), i)
+	var t antlr.RuleContext
+	j := 0
+	for _, ctx := range s.GetChildren() {
+		if _, ok := ctx.(IExpressionContext); ok {
+			if j == i {
+				t = ctx.(antlr.RuleContext)
+				break
+			}
+			j++
+		}
+	}
 
 	if t == nil {
 		return nil
@@ -4101,7 +5073,20 @@ func (s *FunctionArgsContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *FunctionArgsContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case gengineVisitor:
+		return t.VisitFunctionArgs(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 func (p *gengineParser) FunctionArgs() (localctx IFunctionArgsContext) {
+	this := p
+	_ = this
+
 	localctx = NewFunctionArgsContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 44, gengineParserRULE_functionArgs)
 	var _la int
@@ -4299,7 +5284,20 @@ func (s *IntegerContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *IntegerContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case gengineVisitor:
+		return t.VisitInteger(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 func (p *gengineParser) Integer() (localctx IIntegerContext) {
+	this := p
+	_ = this
+
 	localctx = NewIntegerContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 46, gengineParserRULE_integer)
 	var _la int
@@ -4406,7 +5404,20 @@ func (s *RealLiteralContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *RealLiteralContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case gengineVisitor:
+		return t.VisitRealLiteral(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 func (p *gengineParser) RealLiteral() (localctx IRealLiteralContext) {
+	this := p
+	_ = this
+
 	localctx = NewRealLiteralContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 48, gengineParserRULE_realLiteral)
 	var _la int
@@ -4489,6 +5500,10 @@ func (s *StringLiteralContext) DQUOTA_STRING() antlr.TerminalNode {
 	return s.GetToken(gengineParserDQUOTA_STRING, 0)
 }
 
+func (s *StringLiteralContext) BACKQUOTA_STRING() antlr.TerminalNode {
+	return s.GetToken(gengineParserBACKQUOTA_STRING, 0)
+}
+
 func (s *StringLiteralContext) GetRuleContext() antlr.RuleContext {
 	return s
 }
@@ -4509,9 +5524,23 @@ func (s *StringLiteralContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *StringLiteralContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case gengineVisitor:
+		return t.VisitStringLiteral(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 func (p *gengineParser) StringLiteral() (localctx IStringLiteralContext) {
+	this := p
+	_ = this
+
 	localctx = NewStringLiteralContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 50, gengineParserRULE_stringLiteral)
+	var _la int
 
 	defer func() {
 		p.ExitRule()
@@ -4532,7 +5561,14 @@ func (p *gengineParser) StringLiteral() (localctx IStringLiteralContext) {
 	p.EnterOuterAlt(localctx, 1)
 	{
 		p.SetState(308)
-		p.Match(gengineParserDQUOTA_STRING)
+		_la = p.GetTokenStream().LA(1)
+
+		if !(_la == gengineParserDQUOTA_STRING || _la == gengineParserBACKQUOTA_STRING) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 
 	return localctx
@@ -4604,7 +5640,20 @@ func (s *BooleanLiteralContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *BooleanLiteralContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case gengineVisitor:
+		return t.VisitBooleanLiteral(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 func (p *gengineParser) BooleanLiteral() (localctx IBooleanLiteralContext) {
+	this := p
+	_ = this
+
 	localctx = NewBooleanLiteralContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 52, gengineParserRULE_booleanLiteral)
 	var _la int
@@ -4692,7 +5741,13 @@ func (s *FunctionCallContext) RR_BRACKET() antlr.TerminalNode {
 }
 
 func (s *FunctionCallContext) FunctionArgs() IFunctionArgsContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IFunctionArgsContext)(nil)).Elem(), 0)
+	var t antlr.RuleContext
+	for _, ctx := range s.GetChildren() {
+		if _, ok := ctx.(IFunctionArgsContext); ok {
+			t = ctx.(antlr.RuleContext)
+			break
+		}
+	}
 
 	if t == nil {
 		return nil
@@ -4721,7 +5776,20 @@ func (s *FunctionCallContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *FunctionCallContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case gengineVisitor:
+		return t.VisitFunctionCall(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 func (p *gengineParser) FunctionCall() (localctx IFunctionCallContext) {
+	this := p
+	_ = this
+
 	localctx = NewFunctionCallContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 54, gengineParserRULE_functionCall)
 	var _la int
@@ -4755,7 +5823,7 @@ func (p *gengineParser) FunctionCall() (localctx IFunctionCallContext) {
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	if (((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<gengineParserT__1)|(1<<gengineParserT__2)|(1<<gengineParserT__3)|(1<<gengineParserT__4)|(1<<gengineParserTRUE)|(1<<gengineParserFALSE)|(1<<gengineParserSIMPLENAME)|(1<<gengineParserINT)|(1<<gengineParserMINUS))) != 0) || (((_la-36)&-(0x1f+1)) == 0 && ((1<<uint((_la-36)))&((1<<(gengineParserNOT-36))|(1<<(gengineParserLR_BRACKET-36))|(1<<(gengineParserDQUOTA_STRING-36))|(1<<(gengineParserDOTTEDNAME-36))|(1<<(gengineParserDOUBLEDOTTEDNAME-36))|(1<<(gengineParserREAL_LITERAL-36)))) != 0) {
+	if (int64(_la) & ^0x3f) == 0 && ((int64(1)<<_la)&70087338105765948) != 0 {
 		{
 			p.SetState(314)
 			p.FunctionArgs()
@@ -4821,7 +5889,13 @@ func (s *MethodCallContext) RR_BRACKET() antlr.TerminalNode {
 }
 
 func (s *MethodCallContext) FunctionArgs() IFunctionArgsContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IFunctionArgsContext)(nil)).Elem(), 0)
+	var t antlr.RuleContext
+	for _, ctx := range s.GetChildren() {
+		if _, ok := ctx.(IFunctionArgsContext); ok {
+			t = ctx.(antlr.RuleContext)
+			break
+		}
+	}
 
 	if t == nil {
 		return nil
@@ -4850,7 +5924,20 @@ func (s *MethodCallContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *MethodCallContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case gengineVisitor:
+		return t.VisitMethodCall(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 func (p *gengineParser) MethodCall() (localctx IMethodCallContext) {
+	this := p
+	_ = this
+
 	localctx = NewMethodCallContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 56, gengineParserRULE_methodCall)
 	var _la int
@@ -4884,7 +5971,7 @@ func (p *gengineParser) MethodCall() (localctx IMethodCallContext) {
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	if (((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<gengineParserT__1)|(1<<gengineParserT__2)|(1<<gengineParserT__3)|(1<<gengineParserT__4)|(1<<gengineParserTRUE)|(1<<gengineParserFALSE)|(1<<gengineParserSIMPLENAME)|(1<<gengineParserINT)|(1<<gengineParserMINUS))) != 0) || (((_la-36)&-(0x1f+1)) == 0 && ((1<<uint((_la-36)))&((1<<(gengineParserNOT-36))|(1<<(gengineParserLR_BRACKET-36))|(1<<(gengineParserDQUOTA_STRING-36))|(1<<(gengineParserDOTTEDNAME-36))|(1<<(gengineParserDOUBLEDOTTEDNAME-36))|(1<<(gengineParserREAL_LITERAL-36)))) != 0) {
+	if (int64(_la) & ^0x3f) == 0 && ((int64(1)<<_la)&70087338105765948) != 0 {
 		{
 			p.SetState(321)
 			p.FunctionArgs()
@@ -4950,7 +6037,13 @@ func (s *ThreeLevelCallContext) RR_BRACKET() antlr.TerminalNode {
 }
 
 func (s *ThreeLevelCallContext) FunctionArgs() IFunctionArgsContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IFunctionArgsContext)(nil)).Elem(), 0)
+	var t antlr.RuleContext
+	for _, ctx := range s.GetChildren() {
+		if _, ok := ctx.(IFunctionArgsContext); ok {
+			t = ctx.(antlr.RuleContext)
+			break
+		}
+	}
 
 	if t == nil {
 		return nil
@@ -4979,7 +6072,20 @@ func (s *ThreeLevelCallContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *ThreeLevelCallContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case gengineVisitor:
+		return t.VisitThreeLevelCall(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 func (p *gengineParser) ThreeLevelCall() (localctx IThreeLevelCallContext) {
+	this := p
+	_ = this
+
 	localctx = NewThreeLevelCallContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 58, gengineParserRULE_threeLevelCall)
 	var _la int
@@ -5013,7 +6119,7 @@ func (p *gengineParser) ThreeLevelCall() (localctx IThreeLevelCallContext) {
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	if (((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<gengineParserT__1)|(1<<gengineParserT__2)|(1<<gengineParserT__3)|(1<<gengineParserT__4)|(1<<gengineParserTRUE)|(1<<gengineParserFALSE)|(1<<gengineParserSIMPLENAME)|(1<<gengineParserINT)|(1<<gengineParserMINUS))) != 0) || (((_la-36)&-(0x1f+1)) == 0 && ((1<<uint((_la-36)))&((1<<(gengineParserNOT-36))|(1<<(gengineParserLR_BRACKET-36))|(1<<(gengineParserDQUOTA_STRING-36))|(1<<(gengineParserDOTTEDNAME-36))|(1<<(gengineParserDOUBLEDOTTEDNAME-36))|(1<<(gengineParserREAL_LITERAL-36)))) != 0) {
+	if (int64(_la) & ^0x3f) == 0 && ((int64(1)<<_la)&70087338105765948) != 0 {
 		{
 			p.SetState(328)
 			p.FunctionArgs()
@@ -5098,7 +6204,20 @@ func (s *VariableContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *VariableContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case gengineVisitor:
+		return t.VisitVariable(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 func (p *gengineParser) Variable() (localctx IVariableContext) {
+	this := p
+	_ = this
+
 	localctx = NewVariableContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 60, gengineParserRULE_variable)
 	var _la int
@@ -5124,7 +6243,7 @@ func (p *gengineParser) Variable() (localctx IVariableContext) {
 		p.SetState(333)
 		_la = p.GetTokenStream().LA(1)
 
-		if !(((_la-24)&-(0x1f+1)) == 0 && ((1<<uint((_la-24)))&((1<<(gengineParserSIMPLENAME-24))|(1<<(gengineParserDOTTEDNAME-24))|(1<<(gengineParserDOUBLEDOTTEDNAME-24)))) != 0) {
+		if !((int64(_la) & ^0x3f) == 0 && ((int64(1)<<_la)&27021597781000192) != 0) {
 			p.GetErrorHandler().RecoverInline(p)
 		} else {
 			p.GetErrorHandler().ReportMatch(p)
@@ -5201,7 +6320,20 @@ func (s *MathPmOperatorContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *MathPmOperatorContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case gengineVisitor:
+		return t.VisitMathPmOperator(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 func (p *gengineParser) MathPmOperator() (localctx IMathPmOperatorContext) {
+	this := p
+	_ = this
+
 	localctx = NewMathPmOperatorContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 62, gengineParserRULE_mathPmOperator)
 	var _la int
@@ -5304,7 +6436,20 @@ func (s *MathMdOperatorContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *MathMdOperatorContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case gengineVisitor:
+		return t.VisitMathMdOperator(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 func (p *gengineParser) MathMdOperator() (localctx IMathMdOperatorContext) {
+	this := p
+	_ = this
+
 	localctx = NewMathMdOperatorContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 64, gengineParserRULE_mathMdOperator)
 	var _la int
@@ -5423,7 +6568,20 @@ func (s *ComparisonOperatorContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *ComparisonOperatorContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case gengineVisitor:
+		return t.VisitComparisonOperator(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 func (p *gengineParser) ComparisonOperator() (localctx IComparisonOperatorContext) {
+	this := p
+	_ = this
+
 	localctx = NewComparisonOperatorContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 66, gengineParserRULE_comparisonOperator)
 	var _la int
@@ -5449,7 +6607,7 @@ func (p *gengineParser) ComparisonOperator() (localctx IComparisonOperatorContex
 		p.SetState(339)
 		_la = p.GetTokenStream().LA(1)
 
-		if !(((_la-30)&-(0x1f+1)) == 0 && ((1<<uint((_la-30)))&((1<<(gengineParserEQUALS-30))|(1<<(gengineParserGT-30))|(1<<(gengineParserLT-30))|(1<<(gengineParserGTE-30))|(1<<(gengineParserLTE-30))|(1<<(gengineParserNOTEQUALS-30)))) != 0) {
+		if !((int64(_la) & ^0x3f) == 0 && ((int64(1)<<_la)&67645734912) != 0) {
 			p.GetErrorHandler().RecoverInline(p)
 		} else {
 			p.GetErrorHandler().ReportMatch(p)
@@ -5526,7 +6684,20 @@ func (s *LogicalOperatorContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *LogicalOperatorContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case gengineVisitor:
+		return t.VisitLogicalOperator(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 func (p *gengineParser) LogicalOperator() (localctx ILogicalOperatorContext) {
+	this := p
+	_ = this
+
 	localctx = NewLogicalOperatorContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 68, gengineParserRULE_logicalOperator)
 	var _la int
@@ -5645,7 +6816,20 @@ func (s *AssignOperatorContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *AssignOperatorContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case gengineVisitor:
+		return t.VisitAssignOperator(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 func (p *gengineParser) AssignOperator() (localctx IAssignOperatorContext) {
+	this := p
+	_ = this
+
 	localctx = NewAssignOperatorContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 70, gengineParserRULE_assignOperator)
 	var _la int
@@ -5671,7 +6855,7 @@ func (p *gengineParser) AssignOperator() (localctx IAssignOperatorContext) {
 		p.SetState(343)
 		_la = p.GetTokenStream().LA(1)
 
-		if !(((_la-37)&-(0x1f+1)) == 0 && ((1<<uint((_la-37)))&((1<<(gengineParserASSIGN-37))|(1<<(gengineParserSET-37))|(1<<(gengineParserPLUSEQUAL-37))|(1<<(gengineParserMINUSEQUAL-37))|(1<<(gengineParserMULTIEQUAL-37))|(1<<(gengineParserDIVEQUAL-37)))) != 0) {
+		if !((int64(_la) & ^0x3f) == 0 && ((int64(1)<<_la)&8658654068736) != 0) {
 			p.GetErrorHandler().RecoverInline(p)
 		} else {
 			p.GetErrorHandler().ReportMatch(p)
@@ -5744,7 +6928,20 @@ func (s *RangeOperatorContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *RangeOperatorContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case gengineVisitor:
+		return t.VisitRangeOperator(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 func (p *gengineParser) RangeOperator() (localctx IRangeOperatorContext) {
+	this := p
+	_ = this
+
 	localctx = NewRangeOperatorContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 72, gengineParserRULE_rangeOperator)
 
@@ -5835,7 +7032,20 @@ func (s *NotOperatorContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *NotOperatorContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case gengineVisitor:
+		return t.VisitNotOperator(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 func (p *gengineParser) NotOperator() (localctx INotOperatorContext) {
+	this := p
+	_ = this
+
 	localctx = NewNotOperatorContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 74, gengineParserRULE_notOperator)
 
@@ -5903,12 +7113,20 @@ func NewMapVarContext(parser antlr.Parser, parent antlr.ParserRuleContext, invok
 func (s *MapVarContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *MapVarContext) AllVariable() []IVariableContext {
-	var ts = s.GetTypedRuleContexts(reflect.TypeOf((*IVariableContext)(nil)).Elem())
-	var tst = make([]IVariableContext, len(ts))
+	children := s.GetChildren()
+	len := 0
+	for _, ctx := range children {
+		if _, ok := ctx.(IVariableContext); ok {
+			len++
+		}
+	}
 
-	for i, t := range ts {
-		if t != nil {
+	tst := make([]IVariableContext, len)
+	i := 0
+	for _, ctx := range children {
+		if t, ok := ctx.(IVariableContext); ok {
 			tst[i] = t.(IVariableContext)
+			i++
 		}
 	}
 
@@ -5916,7 +7134,17 @@ func (s *MapVarContext) AllVariable() []IVariableContext {
 }
 
 func (s *MapVarContext) Variable(i int) IVariableContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IVariableContext)(nil)).Elem(), i)
+	var t antlr.RuleContext
+	j := 0
+	for _, ctx := range s.GetChildren() {
+		if _, ok := ctx.(IVariableContext); ok {
+			if j == i {
+				t = ctx.(antlr.RuleContext)
+				break
+			}
+			j++
+		}
+	}
 
 	if t == nil {
 		return nil
@@ -5934,7 +7162,13 @@ func (s *MapVarContext) RSQARE() antlr.TerminalNode {
 }
 
 func (s *MapVarContext) Integer() IIntegerContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IIntegerContext)(nil)).Elem(), 0)
+	var t antlr.RuleContext
+	for _, ctx := range s.GetChildren() {
+		if _, ok := ctx.(IIntegerContext); ok {
+			t = ctx.(antlr.RuleContext)
+			break
+		}
+	}
 
 	if t == nil {
 		return nil
@@ -5944,7 +7178,13 @@ func (s *MapVarContext) Integer() IIntegerContext {
 }
 
 func (s *MapVarContext) StringLiteral() IStringLiteralContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IStringLiteralContext)(nil)).Elem(), 0)
+	var t antlr.RuleContext
+	for _, ctx := range s.GetChildren() {
+		if _, ok := ctx.(IStringLiteralContext); ok {
+			t = ctx.(antlr.RuleContext)
+			break
+		}
+	}
 
 	if t == nil {
 		return nil
@@ -5973,7 +7213,20 @@ func (s *MapVarContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *MapVarContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case gengineVisitor:
+		return t.VisitMapVar(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 func (p *gengineParser) MapVar() (localctx IMapVarContext) {
+	this := p
+	_ = this
+
 	localctx = NewMapVarContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 76, gengineParserRULE_mapVar)
 
@@ -6012,7 +7265,7 @@ func (p *gengineParser) MapVar() (localctx IMapVarContext) {
 			p.Integer()
 		}
 
-	case gengineParserDQUOTA_STRING:
+	case gengineParserDQUOTA_STRING, gengineParserBACKQUOTA_STRING:
 		{
 			p.SetState(352)
 			p.StringLiteral()
@@ -6092,7 +7345,20 @@ func (s *AtNameContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *AtNameContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case gengineVisitor:
+		return t.VisitAtName(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 func (p *gengineParser) AtName() (localctx IAtNameContext) {
+	this := p
+	_ = this
+
 	localctx = NewAtNameContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 78, gengineParserRULE_atName)
 
@@ -6178,7 +7444,20 @@ func (s *AtIdContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *AtIdContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case gengineVisitor:
+		return t.VisitAtId(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 func (p *gengineParser) AtId() (localctx IAtIdContext) {
+	this := p
+	_ = this
+
 	localctx = NewAtIdContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 80, gengineParserRULE_atId)
 
@@ -6264,7 +7543,20 @@ func (s *AtDescContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *AtDescContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case gengineVisitor:
+		return t.VisitAtDesc(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 func (p *gengineParser) AtDesc() (localctx IAtDescContext) {
+	this := p
+	_ = this
+
 	localctx = NewAtDescContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 82, gengineParserRULE_atDesc)
 
@@ -6350,7 +7642,20 @@ func (s *AtSalContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *AtSalContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case gengineVisitor:
+		return t.VisitAtSal(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 func (p *gengineParser) AtSal() (localctx IAtSalContext) {
+	this := p
+	_ = this
+
 	localctx = NewAtSalContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 84, gengineParserRULE_atSal)
 
@@ -6401,6 +7706,9 @@ func (p *gengineParser) Sempred(localctx antlr.RuleContext, ruleIndex, predIndex
 }
 
 func (p *gengineParser) Expression_Sempred(localctx antlr.RuleContext, predIndex int) bool {
+	this := p
+	_ = this
+
 	switch predIndex {
 	case 0:
 		return p.Precpred(p.GetParserRuleContext(), 4)
@@ -6414,6 +7722,9 @@ func (p *gengineParser) Expression_Sempred(localctx antlr.RuleContext, predIndex
 }
 
 func (p *gengineParser) MathExpression_Sempred(localctx antlr.RuleContext, predIndex int) bool {
+	this := p
+	_ = this
+
 	switch predIndex {
 	case 2:
 		return p.Precpred(p.GetParserRuleContext(), 4)

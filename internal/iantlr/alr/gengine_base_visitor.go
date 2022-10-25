@@ -1,8 +1,7 @@
-// Code generated from /Users/renyunyi/go_project/github.com/bilibili/gengine/internal/iantlr/gengine.g4 by ANTLR 4.9. DO NOT EDIT.
+// Code generated from java-escape by ANTLR 4.11.1. DO NOT EDIT.
 
 package parser // gengine
-
-import "github.com/antlr/antlr4/runtime/Go/antlr"
+import "github.com/antlr/antlr4/runtime/Go/antlr/v4"
 
 type BasegengineVisitor struct {
 	*antlr.BaseParseTreeVisitor
@@ -76,6 +75,22 @@ func (v *BasegengineVisitor) VisitElseStmt(ctx *ElseStmtContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 
+func (v *BasegengineVisitor) VisitForStmt(ctx *ForStmtContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BasegengineVisitor) VisitBreakStmt(ctx *BreakStmtContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BasegengineVisitor) VisitForRangeStmt(ctx *ForRangeStmtContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BasegengineVisitor) VisitContinueStmt(ctx *ContinueStmtContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
 func (v *BasegengineVisitor) VisitConstant(ctx *ConstantContext) interface{} {
 	return v.VisitChildren(ctx)
 }
@@ -133,6 +148,10 @@ func (v *BasegengineVisitor) VisitLogicalOperator(ctx *LogicalOperatorContext) i
 }
 
 func (v *BasegengineVisitor) VisitAssignOperator(ctx *AssignOperatorContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BasegengineVisitor) VisitRangeOperator(ctx *RangeOperatorContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 
