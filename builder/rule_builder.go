@@ -46,6 +46,7 @@ func (builder *RuleBuilder) BuildRuleFromString(ruleString string) error {
 	in := antlr.NewInputStream(ruleString)
 	lexer := parser.NewgengineLexer(in)
 	lexerErrListener := iparser.NewGengineErrorListener()
+	lexer.RemoveErrorListeners()
 	lexer.AddErrorListener(lexerErrListener)
 	stream := antlr.NewCommonTokenStream(lexer, antlr.TokenDefaultChannel)
 	listener := iparser.NewGengineParserListener(kc)
@@ -54,6 +55,7 @@ func (builder *RuleBuilder) BuildRuleFromString(ruleString string) error {
 	psr.BuildParseTrees = true
 	//grammar listener
 	grammarErrListener := iparser.NewGengineErrorListener()
+	psr.RemoveErrorListeners()
 	psr.AddErrorListener(grammarErrListener)
 	antlr.ParseTreeWalkerDefault.Walk(listener, psr.Primary())
 

@@ -236,6 +236,7 @@ func getKc(ruleString string) (*base.KnowledgeContext, error) {
 
 	in := antlr.NewInputStream(ruleString)
 	lexer := parser.NewgengineLexer(in)
+	lexer.RemoveErrorListeners()
 	stream := antlr.NewCommonTokenStream(lexer, antlr.TokenDefaultChannel)
 
 	kc := base.NewKnowledgeContext()
@@ -245,6 +246,7 @@ func getKc(ruleString string) (*base.KnowledgeContext, error) {
 	psr.BuildParseTrees = true
 
 	errListener := iparser.NewGengineErrorListener()
+	psr.RemoveErrorListeners()
 	psr.AddErrorListener(errListener)
 	antlr.ParseTreeWalkerDefault.Walk(listener, psr.Primary())
 
